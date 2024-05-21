@@ -16,6 +16,12 @@
   }
 }
 
+main,
+body,
+div {
+  cursor: url('../../public/cursor.png'), url('../../public/cursor.ico') auto;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
@@ -60,4 +66,9 @@ input {
 #place:hover~#placetext,
 #placetext:hover {
   display: none;
+}
+
+a:hover {
+  color: orange;
+  transition-duration: 200ms;
 }

@@ -3,8 +3,30 @@
 import Image from "next/image";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import { ChangeEvent, FormEvent, useState } from "react";
+import { Gallery } from "react-grid-gallery";
+
 
 export default function Home() {
+  const images = [
+    {
+      src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+    },
+    {
+      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+    },
+    {
+      src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+    },
+    {
+      src: "/kashmir.jpeg",
+    },
+    {
+      src: "/whatsapp.png",
+    },
+    {
+      src: "https://i.pinimg.com/736x/46/fe/c0/46fec04a273ccc1a380cb882615fafbd.jpg",
+    }
+  ];
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -21,23 +43,24 @@ export default function Home() {
   return (
     <main>
       <body className="font-['Montserrat']">
-        <header className="flex items-center justify-between h-[5.5em] bg-[#ffffff64] backdrop-blur-sm absolute z-[10] top-0 left-0 right-0 p-8">
+        <header className="flex sticky items-center justify-between h-[5.5em] bg-[#ffffff64] backdrop-blur-sm z-[10] top-0 left-0 right-0 p-8">
           <Image src="/logo.png" alt="logo" width={300} height={100} />
           <div>
             <ul className="flex space-x-12">
-              <li className="text-white">Home</li>
-              <li className="text-white">About Us</li>
-              <li className="text-white">Services</li>
-              <li className="text-white">Contact Us</li>
+              <a className="text-black" href="#home"><li>Home</li></a>
+              <a className="text-black" href="#about"><li>About Us</li></a>
+              <a className="text-black" href="#packages"><li>Packages</li></a>
+              <a className="text-black" href="#gallery"><li>Gallery</li></a>
+
             </ul>
           </div>
         </header>
-        <div id="home" className="h-screen grid grid-cols-2 items-center justify-center px-12">
+        <div id="home" className="h-screen grid grid-cols-2 items-center place-items-center px-12">
           <div>
-            <h1 className="text-4xl text-white font-['Playfair_Display']">GODAVARI TOURS & TRAVELS</h1>
+            <h1 className="text-7xl text-white font-['Playfair_Display']">GODAVARI<br /> TOURS & TRAVELS</h1>
             <h1 className="text-lg text-white py-4">Creating Memories, One Step At A Time</h1>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form className="w-2/4" onSubmit={handleSubmit}>
             <div className="flex flex-col py-4">
               <label htmlFor="name">Name:</label>
               <input className="bg-transparent border-white active:border-white" type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
@@ -61,7 +84,7 @@ export default function Home() {
             <button className="py-6 w-full bg-[orange] rounded-lg" type="submit">Submit</button>
           </form>
         </div>
-        <div className="h-screen bg-white flex flex-col items-center justify-center">
+        <div id="about" className="h-screen bg-white flex flex-col items-center justify-center">
           <h2 className="text-black text-4xl">ABOUT US</h2>
           <p className="text-black py-4">Our Tradition Of Best Hospitality</p>
           <div className="flex items-center justify-evenly py-12">
@@ -77,7 +100,7 @@ export default function Home() {
           <h2 className="text-4xl py-4">Make Every Moment Memorable…</h2>
           <p>At Godavari Tours and Travels, we believe that every journey should be more than just a trip – it should be a collection of unforgettable moments. From the first step of your adventure to the last, we curate exceptional experiences that leave lasting impressions. Make every moment memorable with us.</p>
         </div>
-        <div className="min-h-screen bg-white items-center justify-center flex flex-col">
+        <div id="packages" className="min-h-screen bg-white items-center justify-center flex flex-col">
           <h2 className="text-black text-4xl py-6">PACKAGES</h2>
           <h3 className="text-black text-lg">Domestic Packages</h3>
           <div className="grid grid-flow-row grid-cols-4 gap-3.5">
@@ -166,10 +189,23 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="py-12 bg-black flex items-center justify-center">
-          <Image src="/thankyou.png" alt="footer" width={250} height={300} />
-          <p></p>
+        <div id="gallery" className="h-screen p-[64px] border-b-2">
+          <h2 className="text-white text-center text-4xl py-6">GALLERY</h2>
+          <Gallery enableImageSelection={false} images={images} />
         </div>
+        <div className="py-12 bg-black flex flex-col items-center justify-center">
+          <Image src="/thankyou.png" alt="footer" width={250} height={300} />
+          <p className="py-4">thanking all our customers,</p>
+          <p className="text-2xl">A Happy, Safe, and Memorable Journey</p>
+        </div>
+        <a className="float-right sticky bottom-0 right-0 pb-4 pr-4 -mb-32 w-fit" href="https://wa.me/919390909394" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
+        <footer className="w-full bg-white text-center flex flex-col justify-between">
+          <div className="flex items-center justify-evenly">
+            <Image className="p-4" src="/logo.png" alt="logo" width={250} height={100} />
+            <a href="mailto:godavaritravelsindia@gmail.com" className="text-black">godavaritravelsindia@gmail.com</a>
+          </div>
+          <p className="text-black text-sm py-4">© 2024 Godavari Tours & Travels. </p>
+        </footer>
       </body>
     </main>
   );
