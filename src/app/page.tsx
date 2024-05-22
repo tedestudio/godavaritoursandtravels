@@ -5,27 +5,108 @@ import { Montserrat, Playfair_Display } from "next/font/google";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Gallery } from "react-grid-gallery";
 
-
 export default function Home() {
   const images = [
     {
-      src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+      src: "about.jpeg",
+      width: 4,
+      height: 3,
     },
     {
-      src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+      src: "araku.jpeg",
+      width: 6,
+      height: 3,
+    }, {
+      src: "bali.jpeg",
+      width: 3,
+      height: 3,
+    }, {
+      src: "coorg.jpeg",
+      width: 5,
+      height: 3,
+    }, {
+      src: "dubai.jpeg",
+      width: 4,
+      height: 3,
+    }, {
+      src: "gangtok.jpeg",
+      width: 4,
+      height: 3,
+    }, {
+      src: "goa.jpeg",
+      width: 6,
+      height: 3,
+    }, {
+      src: "hyderabad.jpeg",
+      width: 6,
+      height: 3,
+    }, {
+      src: "kashmir.jpeg",
+      width: 3,
+      height: 3,
+    }, {
+      src: "kerala.jpeg",
+      width: 6,
+      height: 3,
+    }, {
+      src: "ladakh.jpeg",
+      width: 5,
+      height: 3,
+    }, {
+      src: "araku.jpeg",
+      width: 4,
+      height: 3,
+    }, {
+      src: "malaysia.jpeg",
+      width: 4,
+      height: 3,
+    }, {
+      src: "maldives.jpeg",
+      width: 5,
+      height: 3,
+    }, {
+      src: "meghalaya.jpeg",
+      width: 6,
+      height: 3,
+    }, {
+      src: "memorable.jpeg",
+      width: 5,
+      height: 3,
+    }, {
+      src: "ooty.jpeg",
+      width: 7,
+      height: 3,
+    }, {
+      src: "shimla.jpeg",
+      width: 4,
+      height: 3,
+    }, {
+      src: "singapore.jpeg",
+      width: 5,
+      height: 3,
+    }, {
+      src: "srilanka.jpeg",
+      width: 4,
+      height: 3,
+    }, {
+      src: "thailand.jpeg",
+      width: 5,
+      height: 3,
+    }, {
+      src: "turkey.jpeg",
+      width: 5.5,
+      height: 3,
+    }, {
+      src: "vietnam.jpeg",
+      width: 6,
+      height: 3,
     },
     {
-      src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-    },
-    {
-      src: "/kashmir.jpeg",
-    },
-    {
-      src: "/whatsapp.png",
-    },
-    {
-      src: "https://i.pinimg.com/736x/46/fe/c0/46fec04a273ccc1a380cb882615fafbd.jpg",
+      src: 'https://e0.pxfuel.com/wallpapers/898/938/desktop-wallpaper-travel-tours-and-travels-background-travel-and-tourism.jpg',
+      width: 7,
+      height: 4,
     }
+
   ];
   const [formData, setFormData] = useState({
     name: '',
@@ -39,11 +120,19 @@ export default function Home() {
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const res = await fetch('/api/mailer', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
   };
   return (
     <main>
       <body className="font-['Montserrat']">
-        <header className="flex sticky items-center justify-between h-[5.5em] bg-[#ffffff64] backdrop-blur-sm z-[10] top-0 left-0 right-0 p-8">
+        <header className="flex fixed items-center justify-between h-[5.5em] bg-[#ffffff64] backdrop-blur-sm z-[10] top-0 left-0 right-0 p-8">
           <Image src="/logo.png" alt="logo" width={300} height={100} />
           <div>
             <ul className="flex space-x-12">
@@ -189,7 +278,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div id="gallery" className="h-screen p-[64px] border-b-2">
+        <div id="gallery" className="min-h-screen p-[64px]">
           <h2 className="text-white text-center text-4xl py-6">GALLERY</h2>
           <Gallery enableImageSelection={false} images={images} />
         </div>
@@ -198,7 +287,7 @@ export default function Home() {
           <p className="py-4">thanking all our customers,</p>
           <p className="text-2xl">A Happy, Safe, and Memorable Journey</p>
         </div>
-        <a className="float-right sticky bottom-0 right-0 pb-4 pr-4 -mb-32 w-fit" href="https://wa.me/919390909394" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
+        <a className="fixed right-4 bottom-4 animate-spin opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
         <footer className="w-full bg-white text-center flex flex-col justify-between">
           <div className="flex items-center justify-evenly">
             <Image className="p-4" src="/logo.png" alt="logo" width={250} height={100} />

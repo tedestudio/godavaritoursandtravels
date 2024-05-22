@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "next": "14.2.3",
+    "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
-    "react-grid-gallery": "^1.0.1"
+    "react-grid-gallery": "^1.0.1",
+    "resend": "^3.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",

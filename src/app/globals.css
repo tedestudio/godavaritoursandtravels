@@ -36,8 +36,9 @@ body {
 }
 
 #home {
-  background-image: linear-gradient(rgba(40, 34, 0, 0.654), rgba(0, 0, 0, 0.563)), url('../../public/bg.jpg');
+  background-image: linear-gradient(rgba(40, 34, 0, 0.654), rgba(0, 0, 0, 0.563)), url('../../public/bg.png');
   background-size: cover;
+  background-position: right;
 }
 
 input {
