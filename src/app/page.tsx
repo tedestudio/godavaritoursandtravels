@@ -121,20 +121,14 @@ export default function Home() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const res = await fetch('/api/mailer', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+    window.open('https://wa.me/919390909394?text=Name:%20' + formData.name + '%0APhone:%20' + formData.phone + '%0AEmail:%20' + formData.email + '%0ADestination:%20' + formData.destination + '%0ADate:%20' + formData.date, '_blank');
   };
   return (
     <main>
       <body className="font-['Montserrat']">
         <header className="flex fixed items-center justify-between h-[5.5em] bg-[#ffffff64] backdrop-blur-sm z-[10] top-0 left-0 right-0 p-8">
           <Image src="/logo.png" alt="logo" width={300} height={100} />
-          <div>
+          <div className="hidden lg:block">
             <ul className="flex space-x-12">
               <a className="text-black" href="#home"><li>Home</li></a>
               <a className="text-black" href="#about"><li>About Us</li></a>
@@ -144,12 +138,12 @@ export default function Home() {
             </ul>
           </div>
         </header>
-        <div id="home" className="h-screen grid grid-cols-2 items-center place-items-center px-12">
+        <div id="home" className="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center place-items-center px-12 py-32 lg:p-0">
           <div>
-            <h1 className="text-7xl text-white font-['Playfair_Display']">GODAVARI<br /> TOURS & TRAVELS</h1>
-            <h1 className="text-lg text-white py-4">Creating Memories, One Step At A Time</h1>
+            <h1 className="text-2xl lg:text-7xl text-white font-['Playfair_Display']">GODAVARI<br /> TOURS & TRAVELS</h1>
+            <h1 className="text-xs lg:text-lg text-white py-4">Creating Memories, One Step At A Time</h1>
           </div>
-          <form className="w-2/4" onSubmit={handleSubmit}>
+          <form className="w-full lg:w-2/4" onSubmit={handleSubmit}>
             <div className="flex flex-col py-4">
               <label htmlFor="name">Name:</label>
               <input className="bg-transparent border-white active:border-white" type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
@@ -173,26 +167,26 @@ export default function Home() {
             <button className="py-6 w-full bg-[orange] rounded-lg" type="submit">Submit</button>
           </form>
         </div>
-        <div id="about" className="h-screen bg-white flex flex-col items-center justify-center">
+        <div id="about" className="min-h-screen bg-white text-center place-content-center px-4 py-12">
           <h2 className="text-black text-4xl">ABOUT US</h2>
           <p className="text-black py-4">Our Tradition Of Best Hospitality</p>
-          <div className="flex items-center justify-evenly py-12">
+          <div className="lg:flex items-center justify-evenly py-4 text-left">
             <Image className="rounded-lg shadow-2xl hover:shadow-lg duration-200 grayscale hover:grayscale-0" src="/about.jpeg" alt="about" width={600} height={300} />
-            <p className="text-black w-2/5 leading-8">Godavari Tours and Travels is a well-known travel agency that operates from the Godavari district, Kakinada, Andhra Pradesh, India. We offer a variety of travel services, including Domestic & International tour packages, Transportation, Hotel Reservations, Visa, Cruise Bookings, and Travel Insurance to both domestic and international travelers.
+            <p className="text-black lg:w-2/5 leading-8 text-xs lg:text-base">Godavari Tours and Travels is a well-known travel agency that operates from the Godavari district, Kakinada, Andhra Pradesh, India. We offer a variety of travel services, including Domestic & International tour packages, Transportation, Hotel Reservations, Visa, Cruise Bookings, and Travel Insurance to both domestic and international travelers.
 
               The agency likely organizes tours to popular destinations within India & Internationally. These tours might encompass cultural, historical, and natural attractions, providing travelers with an immersive experience of the region’s rich heritage and scenic beauty.
 
               In addition to tour packages, Godavari Tours and Travels may offer transportation services such as bus or car rentals for individuals or groups. They may also assist with booking accommodations, ensuring that travelers have a comfortable place to stay during their journey.</p>
           </div>
         </div>
-        <div id="memorable" className="text-white flex flex-col py-24">
-          <h2 className="text-4xl py-4">Make Every Moment Memorable…</h2>
-          <p>At Godavari Tours and Travels, we believe that every journey should be more than just a trip – it should be a collection of unforgettable moments. From the first step of your adventure to the last, we curate exceptional experiences that leave lasting impressions. Make every moment memorable with us.</p>
+        <div id="memorable" className="text-white flex flex-col py-24 px-4">
+          <h2 className="text-2xl lg:text-4xl py-4">Make Every Moment Memorable…</h2>
+          <p className="text-xs lg:text-base">At Godavari Tours and Travels, we believe that every journey should be more than just a trip – it should be a collection of unforgettable moments. From the first step of your adventure to the last, we curate exceptional experiences that leave lasting impressions. Make every moment memorable with us.</p>
         </div>
-        <div id="packages" className="min-h-screen bg-white items-center justify-center flex flex-col">
+        <div id="packages" className="min-h-screen bg-white items-center justify-center flex flex-col px-4">
           <h2 className="text-black text-4xl py-6">PACKAGES</h2>
           <h3 className="text-black text-lg">Domestic Packages</h3>
-          <div className="grid grid-flow-row grid-cols-4 gap-3.5">
+          <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-3.5">
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/kashmir.jpeg'} alt="" width={250} height={250}></Image>
               <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">KASHMIR</p>
@@ -203,7 +197,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/shimla.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SHIMLA & MANALI</p>
+              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SHIMLA &<br /> MANALI</p>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/gangtok.jpeg'} alt="" width={250} height={250}></Image>
@@ -239,7 +233,7 @@ export default function Home() {
             </div>
           </div>
           <h3 className="text-black text-lg">International Packages</h3>
-          <div className="grid grid-flow-row grid-cols-4 gap-3.5">
+          <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-3.5">
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/thailand.jpeg'} alt="" width={250} height={250}></Image>
               <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">THAILAND</p>
@@ -278,20 +272,20 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div id="gallery" className="min-h-screen p-[64px]">
+        <div id="gallery" className="min-h-screen lg:p-[64px]">
           <h2 className="text-white text-center text-4xl py-6">GALLERY</h2>
           <Gallery enableImageSelection={false} images={images} />
         </div>
         <div className="py-12 bg-black flex flex-col items-center justify-center">
-          <Image src="/thankyou.png" alt="footer" width={250} height={300} />
-          <p className="py-4">thanking all our customers,</p>
-          <p className="text-2xl">A Happy, Safe, and Memorable Journey</p>
+          <Image className="lg:w-1/6" src="/thankyou.png" alt="footer" width={250} height={300} />
+          <p className="text-xs lg:text-base py-4">thanking all our customers,</p>
+          <p className="text-base lg:text-2xl">A Happy, Safe, and Memorable Journey</p>
         </div>
-        <a className="fixed right-4 bottom-4 animate-spin opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
+        <a className="fixed right-4 bottom-4 opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
         <footer className="w-full bg-white text-center flex flex-col justify-between">
-          <div className="flex items-center justify-evenly">
-            <Image className="p-4" src="/logo.png" alt="logo" width={250} height={100} />
-            <a href="mailto:godavaritravelsindia@gmail.com" className="text-black">godavaritravelsindia@gmail.com</a>
+          <div className="lg:flex items-center justify-evenly px-4">
+            <Image className="p-4 block m-auto lg:ml-0" src="/logo.png" alt="logo" width={250} height={100} />
+            <a href="mailto:godavaritravelsindia@gmail.com" className="text-black text-xs lg:text-base">godavaritravelsindia@gmail.com</a>
           </div>
           <p className="text-black text-sm py-4">© 2024 Godavari Tours & Travels. </p>
         </footer>
