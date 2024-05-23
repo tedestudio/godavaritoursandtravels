@@ -276,17 +276,20 @@ export default function Home() {
           <h2 className="text-white text-center text-4xl py-6">GALLERY</h2>
           <Gallery enableImageSelection={false} images={images} />
         </div>
+        <div className="min-h-screen border-white border-t-2 border-b-2 px-4">
+          <h2 className="text-white text-center text-4xl py-6">CONTACT US</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 justify-center place-items-center">
+            <iframe className="rounded-lg w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.6037364569556!2d82.24574758035702!3d16.994031172339604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3829a9bc670c59%3A0xbe52851ce9b03cf9!2sGODAVARI%20TOURS%20AND%20TRAVELS!5e0!3m2!1sen!2sin!4v1716491412136!5m2!1sen!2sin" width="600" height="450" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <p className="py-8"><a href="mailto:godavaritravelsindia@gmail.com" className="text-white text-base lg:text-lg"><span className="text-xs">mail us at</span><br />godavaritravelsindia@gmail.com</a></p>
+          </div>
+        </div>
         <div className="py-12 bg-black flex flex-col items-center justify-center">
           <Image className="lg:w-1/6" src="/thankyou.png" alt="footer" width={250} height={300} />
           <p className="text-xs lg:text-base py-4">thanking all our customers,</p>
           <p className="text-base lg:text-2xl">A Happy, Safe, and Memorable Journey</p>
         </div>
-        <a className="fixed right-4 bottom-4 opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
+        <a className="fixed right-4 bottom-4 opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394?text=Hi!" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
         <footer className="w-full bg-white text-center flex flex-col justify-between">
-          <div className="lg:flex items-center justify-evenly px-4">
-            <Image className="p-4 block m-auto lg:ml-0" src="/logo.png" alt="logo" width={250} height={100} />
-            <a href="mailto:godavaritravelsindia@gmail.com" className="text-black text-xs lg:text-base">godavaritravelsindia@gmail.com</a>
-          </div>
           <p className="text-black text-sm py-4">© 2024 Godavari Tours & Travels. </p>
         </footer>
       </body>
