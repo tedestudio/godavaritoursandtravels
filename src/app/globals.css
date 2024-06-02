@@ -37,7 +37,7 @@ body {
 }
 
 #home {
-  background-image: linear-gradient(rgba(40, 34, 0, 0.654), rgba(0, 0, 0, 0.563)), url('../../public/bg.png');
+  background-image: linear-gradient(rgba(40, 34, 0, 0.8), rgba(0, 0, 0, 0.6)), url('../../public/bg.png');
   background-size: cover;
   background-position: right;
 }
@@ -52,18 +52,22 @@ input {
 
 }
 
-p,
-label,
-input,
-button,
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
 h4,
-a {
-  font-family: sans-serif;
+h5,
+h6 {
+  font-family: 'DM Serif Display', serif;
 }
 
 #memorable {
   position: relative;
-  background-image: linear-gradient(rgba(40, 34, 0, 0.654), rgba(0, 0, 0, 0.563)), url('../../public/memorable.jpeg');
+  background-image: linear-gradient(rgba(40, 34, 0, 0.654), rgba(0, 0, 0, 0.563)), url('../../public/turkey_grey.png');
   /* Replace with your image URL */
   background-size: cover;
   background-position: center;
@@ -75,7 +79,7 @@ a {
   text-align: center;
 }
 
-footer{
+footer {
   background-image: linear-gradient(rgba(255, 255, 255, 0.866), rgba(255, 255, 255, 0.711)),
     url('../../public/bg.png');
   background-position: center;
@@ -83,7 +87,8 @@ footer{
 
 #whychoose {
   position: relative;
-  background-image: url('../../public/whychoose.jpeg');
+  background-image: linear-gradient(rgba(40, 34, 0, 0.654), rgba(0, 0, 0, 0.563)),
+    url('../../public/turkey.jpeg');
   /* Replace with your image URL */
   background-size: cover;
   background-position: center;
@@ -107,4 +112,13 @@ a:hover {
 
 svg {
   fill: white;
+}
+
+#abouttext {
+  line-height: 1.8em;
+}
+
+#placetext {
+  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
 }

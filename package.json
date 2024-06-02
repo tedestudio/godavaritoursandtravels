@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/divider": "^2.0.28",
+    "@nextui-org/system": "^2.2.1",
+    "@nextui-org/theme": "^2.2.5",
+    "framer-motion": "^11.2.10",
     "next": "14.2.3",
     "nodemailer": "^6.9.13",
     "react": "^18",

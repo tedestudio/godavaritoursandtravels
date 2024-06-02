@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const font = DM_Serif_Display({
-  weight: "400",
-  subsets: ["latin"],
-});
 export const metadata: Metadata = {
   title: "Godavari Tours & Travels",
   description: "Top Travel Agency in Andhra Pradesh",
@@ -21,6 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Link href={"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"}></Link>
+      <Link href={"https://fonts.googleapis.com"} prefetch={true}></Link>
+      <Link href={"https://fonts.gstatic.com"} prefetch={true}></Link>
+      <Link href={"https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"} prefetch={true}></Link>
       <header className="flex fixed items-center justify-between h-[5.5em] bg-white z-[10] top-0 left-0 right-0 p-8 shadow-lg">
         <Image src="/logo.png" alt="logo" width={300} height={100} />
         <div className="hidden lg:block">
@@ -29,19 +27,23 @@ export default function RootLayout({
             <a className="text-black" href="/#about"><li>About Us</li></a>
             <a className="text-black" href="/#packages"><li>Packages</li></a>
             <a className="text-black" href="/#gallery"><li>Gallery</li></a>
-
           </ul>
         </div>
+        <a href="https://wa.me/919390909394?text=Hi!"><button className="bg-[#ffa600d7] hover:bg-[orange] duration-300 px-4 py-2 rounded-md text-amber-950">GET IN TOUCH</button></a>
       </header>
-      <body className={font.className}>{children}</body>
+      <body className=''>{children}</body>
       <footer className="w-full bg-white text-black text-center flex flex-col px-12 py-4">
         <div className="flex flex-col lg:flex-row items-start justify-evenly gap-12">
           <div className="w-full text-left">
             <Image src={"/logo.png"} alt={""} width={300} height={0}></Image>
-            <p className="py-4 text-sm">Godavari Tours & Travels, is a renowned destination management company with a SHA+ certification.</p>
+            <div className="py-4 text-sm">
+              <p className="pl-4">
+                recognised by
+              </p>
+              <Image src={"/msme.png"} alt={""} width={200} height={0}></Image></div>
           </div>
           <div className="w-full text-left">
-            <h1 className="text-lg py-4">Product Categories</h1>
+            <h1 className="text-lg py-4">Links</h1>
             <ul className="flex flex-col gap-2">
               <li><a href="/#home">Home</a></li>
               <li><a href="/#about">About</a></li>
@@ -52,8 +54,8 @@ export default function RootLayout({
           <div className="w-full text-left">
             <h1 className="text-lg py-4">Legals</h1>
             <ul className="flex flex-col gap-2">
-              <li><a href="/terms">Terms & Conditions</a></li>
-              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/">Terms & Conditions</a></li>
+              <li><a href="/">Privacy Policy</a></li>
             </ul>
           </div>
           <div className="w-full text-left">
@@ -63,6 +65,11 @@ export default function RootLayout({
               <li className="flex gap-2 items-start"><Image src={"/phone.svg"} alt={""} width={24} height={0}></Image> <a href="https://wa.me/919390909394?text=Hi!">+91 93909 09394</a></li>
               <li className="flex gap-2 items-start"><Image src={"/email.svg"} alt={""} width={24} height={0}></Image> <a href="mailto:godavaritravelsindia@gmail.com">godavaritravelsindia@gmail.com</a></li>
             </ul>
+            <div className="flex gap-4 pt-6">
+              <a href="https://www.instagram.com/godavaritoursandtravels?igsh=eTY3Y2pha3Z6ZDJz"><Image src={"/instagram.png"} alt={""} width={24} height={24}></Image></a>
+              <a href="#"><Image src={"/facebook.png"} alt={""} width={24} height={24}></Image></a>
+              <a href="https://www.linkedin.com/company/godavaritoursandtravels"><Image src={"/linkedin.png"} alt={""} width={24} height={24}></Image></a>
+            </div>
           </div>
         </div>
         <p className="text-black text-sm py-4">© 2024 Godavari Tours & Travels. </p>
