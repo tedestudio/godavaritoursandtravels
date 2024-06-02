@@ -59,7 +59,7 @@ export default function RootLayout({
           <div className="w-full text-left">
             <h1 className="text-lg py-4">Contact Details</h1>
             <ul className="flex flex-col gap-4">
-              <li className="flex gap-2 items-start"><Image src={"/address.svg"} alt={""} width={24} height={0}></Image> <a href="https://maps.google.com/maps?ll=16.994026,82.250619&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=13714170174522801401">Near Sub-Registrar Office, RTC Colony, Ramanayapeta, Kakinada, Andhra Pradesh 533005</a></li>
+              <li className="flex gap-2 items-start"><Image src={"/address.svg"} alt={""} width={24} height={0}></Image> <a href="https://maps.google.com/maps?ll=16.994026,82.250619&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=13714170174522801401"> Door No 3-231,Gangaraju Nagar,Valasapakala,Near Sub-registrar office,Ramanayyapeta, Kakinada,Andhrapradesh-533005</a></li>
               <li className="flex gap-2 items-start"><Image src={"/phone.svg"} alt={""} width={24} height={0}></Image> <a href="https://wa.me/919390909394?text=Hi!">+91 93909 09394</a></li>
               <li className="flex gap-2 items-start"><Image src={"/email.svg"} alt={""} width={24} height={0}></Image> <a href="mailto:godavaritravelsindia@gmail.com">godavaritravelsindia@gmail.com</a></li>
             </ul>
