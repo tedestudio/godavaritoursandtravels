@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -43,16 +44,46 @@ body {
 
 input {
   border-bottom: 1px solid white;
-  background-color: transparent;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 10px;
   border-radius: 5px;
   outline: none;
+  font-family: sans-serif;
+
+}
+
+p,
+label,
+input,
+button,
+h4,
+a {
+  font-family: sans-serif;
 }
 
 #memorable {
   position: relative;
   background-image: linear-gradient(rgba(40, 34, 0, 0.654), rgba(0, 0, 0, 0.563)), url('../../public/memorable.jpeg');
+  /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+footer{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.866), rgba(255, 255, 255, 0.711)),
+    url('../../public/bg.png');
+  background-position: center;
+}
+
+#whychoose {
+  position: relative;
+  background-image: url('../../public/whychoose.jpeg');
   /* Replace with your image URL */
   background-size: cover;
   background-position: center;
@@ -72,4 +103,8 @@ input {
 a:hover {
   color: orange;
   transition-duration: 200ms;
+}
+
+svg {
+  fill: white;
 }

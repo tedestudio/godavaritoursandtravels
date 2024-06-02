@@ -1,11 +1,13 @@
 "use client"
 
 import Image from "next/image";
-import { Montserrat, Playfair_Display } from "next/font/google";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Gallery } from "react-grid-gallery";
+import { DM_Serif_Display } from "next/font/google";
 
 export default function Home() {
+
+
   const images = [
     {
       src: "about.jpeg",
@@ -125,44 +127,34 @@ export default function Home() {
   };
   return (
     <main>
-      <body className="font-['Montserrat']">
-        <header className="flex fixed items-center justify-between h-[5.5em] bg-[#ffffff64] backdrop-blur-sm z-[10] top-0 left-0 right-0 p-8">
-          <Image src="/logo.png" alt="logo" width={300} height={100} />
-          <div className="hidden lg:block">
-            <ul className="flex space-x-12">
-              <a className="text-black" href="#home"><li>Home</li></a>
-              <a className="text-black" href="#about"><li>About Us</li></a>
-              <a className="text-black" href="#packages"><li>Packages</li></a>
-              <a className="text-black" href="#gallery"><li>Gallery</li></a>
-
-            </ul>
+      <body className="">
+        <div id="home" className="min-h-screen flex flex-col items-center justify-center px-2 lg:px-12 py-32 lg:p-0">
+          <div className="text-center">
+            <h1 className="text-2xl lg:text-7xl text-white ">GODAVARI TOURS & TRAVELS</h1>
+            <h4 className="text-xs lg:text-lg text-white py-4">Creating Memories, One Step At A Time</h4>
           </div>
-        </header>
-        <div id="home" className="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center place-items-center px-12 py-32 lg:p-0">
-          <div>
-            <h1 className="text-2xl lg:text-7xl text-white font-['Playfair_Display']">GODAVARI<br /> TOURS & TRAVELS</h1>
-            <h1 className="text-xs lg:text-lg text-white py-4">Creating Memories, One Step At A Time</h1>
-          </div>
-          <form className="w-full lg:w-2/4" onSubmit={handleSubmit}>
-            <div className="flex flex-col py-4">
-              <label htmlFor="name">Name:</label>
-              <input className="bg-transparent border-white active:border-white" type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-            </div>
-            <div className="flex flex-col py-4">
-              <label htmlFor="phone">Phone:</label>
-              <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-            </div>
-            <div className="flex flex-col py-4">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-            </div>
-            <div className="flex flex-col py-4">
-              <label htmlFor="destination">Destination:</label>
-              <input type="text" id="destination" name="destination" value={formData.destination} onChange={handleChange} required />
-            </div>
-            <div className="flex flex-col py-4">
-              <label htmlFor="date">Date of Travel:</label>
-              <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} required />
+          <form className="w-full lg:px-12 py-12" onSubmit={handleSubmit}>
+            <div className="flex w-full justify-between py-4 flex-col lg:flex-row gap-2">
+              <div className="flex flex-col w-full">
+                <label htmlFor="name">Name</label>
+                <input className="border-white active:border-white" type="text" id="name" name="name" value={formData.name} placeholder="Name" onChange={handleChange} required />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} required />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="destination">Destination</label>
+                <input type="text" id="destination" name="destination" placeholder="Destination" value={formData.destination} onChange={handleChange} required />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="date">Date of Travel</label>
+                <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} required />
+              </div>
             </div>
             <button className="py-6 w-full bg-[orange] rounded-lg" type="submit">Submit</button>
           </form>
@@ -183,92 +175,113 @@ export default function Home() {
           <h2 className="text-2xl lg:text-4xl py-4">Make Every Moment Memorable…</h2>
           <p className="text-xs lg:text-base">At Godavari Tours and Travels, we believe that every journey should be more than just a trip – it should be a collection of unforgettable moments. From the first step of your adventure to the last, we curate exceptional experiences that leave lasting impressions. Make every moment memorable with us.</p>
         </div>
+        <div id="whychoose" className="text-white flex flex-col py-24 px-4">
+          <h2 className="text-2xl lg:text-4xl py-4 text-black">Why Choose Godavari Tours and Travels</h2>
+          <div className="flex flex-col lg:flex-row gap-4 py-4">
+            <div className="text-center items-center justify-center flex flex-col p-12 bg-[orange] rounded-lg shadow-md w-full">
+              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" /></svg>
+              <p className="text-xl py-2">More than 2500 clients</p>
+            </div>
+            <div className="text-center items-center justify-center flex flex-col p-12 bg-[orange] rounded-lg shadow-md w-full">
+              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="m368-336 112-84 110 84-42-136 112-88H524l-44-136-44 136H300l110 88-42 136ZM480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z" /></svg>
+              <p className="text-xl py-2">100% Trusted Agent</p>
+            </div>
+            <div className="text-center items-center justify-center flex flex-col p-12 bg-[orange] rounded-lg shadow-md w-full">
+              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="m274-274-128-70 42-42 100 14 156-156-312-170 56-56 382 98 157-155q17-17 42.5-17t42.5 17q17 17 17 42.5T812-726L656-570l98 382-56 56-170-312-156 156 14 100-42 42-70-128Z" /></svg>
+              <p className="text-xl py-2">10+ Years of Experience</p>
+            </div>
+            <div className="text-center items-center justify-center flex flex-col p-12 bg-[orange] rounded-lg shadow-md w-full">
+              <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e8eaed"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z" /></svg>
+              <p className="text-xl py-2">90% Happy Traveller</p>
+            </div>
+          </div>
+        </div>
         <div id="packages" className="min-h-screen bg-white items-center justify-center flex flex-col px-4">
           <h2 className="text-black text-4xl py-6">PACKAGES</h2>
           <h3 className="text-black text-lg">Domestic Packages</h3>
           <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-3.5">
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/kashmir.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">KASHMIR</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">KASHMIR</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64 " src={'/ladakh.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">LADAKH</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">LADAKH</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/shimla.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SHIMLA &<br /> MANALI</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SHIMLA &<br /> MANALI</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/gangtok.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">GANGTOK & <br />DARJEELING</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">GANGTOK & <br />DARJEELING</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/meghalaya.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">MEGHALAYA</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">MEGHALAYA</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/kerala.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">KERALA</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">KERALA</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/ooty.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">OOTY&<br />KODAIKANAL</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">OOTY&<br />KODAIKANAL</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/coorg.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">COORG</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">COORG</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/goa.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">GOA</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">GOA</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/araku.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">VIZAG&<br />ARAKU</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">VIZAG&<br />ARAKU</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/hyderabad.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">HYDERABAD</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">HYDERABAD</h6>
             </div>
           </div>
           <h3 className="text-black text-lg">International Packages</h3>
           <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-3.5">
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/thailand.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">THAILAND</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">THAILAND</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/singapore.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SINGAPORE</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SINGAPORE</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/malaysia.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">MALAYSIA</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">MALAYSIA</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/dubai.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">DUBAI</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">DUBAI</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/maldives.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">MALDIVES</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">MALDIVES</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/bali.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">BALI</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">BALI</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/srilanka.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SRILANKA</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">SRILANKA</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/vietnam.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">VIETNAM</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">VIETNAM</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 hover:w-64" src={'/turkey.jpeg'} alt="" width={250} height={250}></Image>
-              <p id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">TURKEY</p>
+              <h6 id="placetext" className="absolute text-black font-semibold text-xl tracking-widest shadow-2xl duration-200">TURKEY</h6>
             </div>
           </div>
         </div>
@@ -276,22 +289,12 @@ export default function Home() {
           <h2 className="text-white text-center text-4xl py-6">GALLERY</h2>
           <Gallery enableImageSelection={false} images={images} />
         </div>
-        <div className="min-h-screen border-white border-t-2 border-b-2 px-4">
-          <h2 className="text-white text-center text-4xl py-6">CONTACT US</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 justify-center place-items-center">
-            <iframe className="rounded-lg w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.6037364569556!2d82.24574758035702!3d16.994031172339604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3829a9bc670c59%3A0xbe52851ce9b03cf9!2sGODAVARI%20TOURS%20AND%20TRAVELS!5e0!3m2!1sen!2sin!4v1716491412136!5m2!1sen!2sin" width="600" height="450" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-            <p className="py-8"><a href="mailto:godavaritravelsindia@gmail.com" className="text-white text-base lg:text-lg"><span className="text-xs">mail us at</span><br />godavaritravelsindia@gmail.com</a></p>
-          </div>
-        </div>
         <div className="py-12 bg-black flex flex-col items-center justify-center">
           <Image className="lg:w-1/6" src="/thankyou.png" alt="footer" width={250} height={300} />
           <p className="text-xs lg:text-base py-4">thanking all our customers,</p>
           <p className="text-base lg:text-2xl">A Happy, Safe, and Memorable Journey</p>
         </div>
         <a className="fixed right-4 bottom-4 opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394?text=Hi!" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
-        <footer className="w-full bg-white text-center flex flex-col justify-between">
-          <p className="text-black text-sm py-4">© 2024 Godavari Tours & Travels. </p>
-        </footer>
       </body>
     </main>
   );
