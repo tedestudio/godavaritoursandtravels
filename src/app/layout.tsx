@@ -19,47 +19,53 @@ export default function RootLayout({
       <Link href={"https://fonts.googleapis.com"} prefetch={true}></Link>
       <Link href={"https://fonts.gstatic.com"} prefetch={true}></Link>
       <Link href={"https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"} prefetch={true}></Link>
-      <header className="flex fixed items-center justify-between h-[5.5em] bg-white z-[10] top-0 left-0 right-0 p-8 shadow-lg">
-        <Image src="/logo.png" alt="logo" width={300} height={100} />
-        <div className="hidden lg:block">
-          <ul className="flex space-x-12">
-            <a className="text-black" href="/#home"><li>Home</li></a>
-            <a className="text-black" href="/#about"><li>About Us</li></a>
-            <a className="text-black" href="/#packages"><li>Packages</li></a>
-            <a className="text-black" href="/#gallery"><li>Gallery</li></a>
-          </ul>
+      <header className="fixed top-0 left-0 right-0">
+        <div className="bg-[#ffc75e] flex w-full items-center justify-between px-8 py-2 text-black font-medium">
+          <p>godavaritravelsindia@gmail.com</p>
+          <p>+91 93909 09394</p>
         </div>
-        <a href="https://wa.me/919390909394?text=Hi!"><button className="bg-[#ffa600d7] hover:bg-[orange] duration-300 px-4 py-2 rounded-md text-amber-950">GET IN TOUCH</button></a>
+        <div className="flex items-center justify-between h-[5.5em] bg-white z-[10] p-8 shadow-lg">
+          <Image src="/logo.png" alt="logo" width={300} height={100} />
+          <div className="hidden lg:block">
+            <ul className="flex space-x-12">
+              <a className="text-black" href="/#home"><li>Home</li></a>
+              <a className="text-black" href="/#about"><li>About Us</li></a>
+              <a className="text-black" href="/#packages"><li>Packages</li></a>
+              <a className="text-black" href="/#gallery"><li>Gallery</li></a>
+            </ul>
+          </div>
+          <a href="https://wa.me/919390909394?text=Hi!"><button className="bg-[#ffa600d7] hover:bg-[orange] hidden lg:block duration-300 px-4 py-2 rounded-md text-amber-950">GET IN TOUCH</button></a>
+        </div>
       </header>
       <body className=''>{children}</body>
       <footer className="w-full bg-white text-black text-center flex flex-col px-12 py-4">
         <div className="flex flex-col lg:flex-row items-start justify-evenly gap-12">
-          <div className="w-full text-left">
+          <div className="h-full w-full text-left flex flex-col gap-4">
             <Image src={"/logo.png"} alt={""} width={300} height={0}></Image>
-            <div className="py-4 text-sm">
-              <p className="pl-4">
-                recognised by
-              </p>
-              <Image src={"/msme.png"} alt={""} width={200} height={0}></Image></div>
+            <Image src={"/msme.png"} alt={""} width={200} height={0}></Image>
+            <Image src={"/ttaa.png"} alt={""} width={200} height={0}></Image>
           </div>
-          <div className="w-full text-left">
-            <h1 className="text-lg py-4">Links</h1>
-            <ul className="flex flex-col gap-2">
-              <li><a href="/#home">Home</a></li>
-              <li><a href="/#about">About</a></li>
-              <li><a href="/#packages">Packages</a></li>
-              <li><a href="/#gallery">Gallery</a></li>
-            </ul>
+          <div className="text-left px-12 w-1/2">
+            <div className="">
+              <h1 className="text-xl py-2">Links</h1>
+              <ul className="flex flex-col gap-1 text-gray-800">
+                <li><a href="/#home">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#packages">Packages</a></li>
+                <li><a href="/#gallery">Gallery</a></li>
+              </ul>
+            </div>
+            <div className="py-2">
+              <h1 className="text-xl py-1">Legals</h1>
+              <ul className="flex flex-col gap-2 text-gray-800">
+                <li><a href="/">Terms & Conditions</a></li>
+                <li><a href="/">Privacy Policy</a></li>
+              </ul>
+            </div>
           </div>
+          <iframe className="h-full w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.2882222557064!2d82.09685329999999!3d16.812051699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a378d03d01b9663%3A0xce3ecbaef7ccb23c!2sGodavari%20tours%20and%20travels!5e0!3m2!1sen!2sin!4v1717439711434!5m2!1sen!2sin" width="600" height="450" loading="lazy"></iframe>
           <div className="w-full text-left">
-            <h1 className="text-lg py-4">Legals</h1>
-            <ul className="flex flex-col gap-2">
-              <li><a href="/">Terms & Conditions</a></li>
-              <li><a href="/">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <div className="w-full text-left">
-            <h1 className="text-lg py-4">Contact Details</h1>
+            <h1 className="text-xl pb-4">Contact Details</h1>
             <ul className="flex flex-col gap-4">
               <li className="flex gap-2 items-start"><Image src={"/address.svg"} alt={""} width={24} height={0}></Image> <a href="https://maps.google.com/maps?ll=16.994026,82.250619&z=16&t=m&hl=en&gl=IN&mapclient=embed&cid=13714170174522801401"> Door No 3-231,Gangaraju Nagar,Valasapakala,Near Sub-registrar office,Ramanayyapeta, Kakinada,Andhrapradesh-533005</a></li>
               <li className="flex gap-2 items-start"><Image src={"/phone.svg"} alt={""} width={24} height={0}></Image> <a href="https://wa.me/919390909394?text=Hi!">+91 93909 09394</a></li>

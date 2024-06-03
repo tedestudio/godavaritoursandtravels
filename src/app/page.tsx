@@ -159,7 +159,7 @@ export default function Home() {
           </form>
         </div>
         <div id="about" className="min-h-screen bg-white text-center place-content-center px-4 py-12">
-          <div className="lg:flex items-center justify-evenly py-4 text-left">
+          <div className="lg:flex items-end justify-evenly py-4 text-left">
             <Image className="rounded-lg shadow-2xl hover:shadow-lg duration-200 grayscale hover:grayscale-0" src="/about.jpeg" alt="about" width={600} height={300} />
             <div className="text-amber-950 flex flex-col gap-4 lg:gap-12 lg:w-2/5 leading-8">
               <div>
