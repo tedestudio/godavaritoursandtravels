@@ -27,7 +27,7 @@ export default function RootLayout({
               <a className="text-black" href="/#home"><li>Home</li></a>
               <a className="text-black" href="/#about"><li>About Us</li></a>
               <a className="text-black" href="/#packages"><li>Packages</li></a>
-              <a className="text-black" href="/#gallery"><li>Gallery</li></a>
+              <a className="text-black" href="/#testimonials"><li>Testimonials</li></a>
             </ul>
           </div>
           <a href="https://wa.me/919390909394?text=Hi!"><button className="bg-[#ffa600d7] hover:bg-[orange] hidden lg:block duration-300 px-4 py-2 rounded-md text-amber-950">GET IN TOUCH</button></a>
@@ -48,7 +48,7 @@ export default function RootLayout({
                 <li><a href="/#home">Home</a></li>
                 <li><a href="/#about">About</a></li>
                 <li><a href="/#packages">Packages</a></li>
-                <li><a href="/#gallery">Gallery</a></li>
+                <li><a href="/#testimonials">Testimonials</a></li>
               </ul>
             </div>
             <div className="py-2">
