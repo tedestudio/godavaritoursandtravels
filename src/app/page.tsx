@@ -253,7 +253,7 @@ export default function Home() {
               <h6 id="placetext" className="absolute text-zinc-950 font-semibold text-xl tracking-widest shadow-2xl duration-200">HYDERABAD</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
-              <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200" src={'/odisha.jpeg'} alt="" width={250} height={250}></Image>
+              <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200" src={'/odisha.jpg'} alt="" width={250} height={250}></Image>
               <h6 id="placetext" className="absolute text-zinc-950 font-semibold text-xl tracking-widest shadow-2xl duration-200">ODISHA</h6>
             </div>
           </div>
