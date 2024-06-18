@@ -60,7 +60,7 @@ export default function RootLayout({
             </div>
           </div>
           <div className="w-full flex flex-col gap-6">
-            <iframe className="h-full w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.2882222557064!2d82.09685329999999!3d16.812051699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a378d03d01b9663%3A0xce3ecbaef7ccb23c!2sGodavari%20tours%20and%20travels!5e0!3m2!1sen!2sin!4v1717439711434!5m2!1sen!2sin" width="600" height="450" loading="lazy"></iframe>
+            <iframe className="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.603839691745!2d82.2506185!3d16.9940261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3829a9bc670c59%3A0xbe52851ce9b03cf9!2sGODAVARI%20TOURS%20AND%20TRAVELS!5e0!3m2!1sen!2sin!4v1718730888338!5m2!1sen!2sin" width="400" height="300" loading="lazy"></iframe>
             <Image src={"/msme.png"} alt={""} width={200} height={0}></Image>
           </div>
           <div className="w-full text-left">
@@ -72,7 +72,7 @@ export default function RootLayout({
             </ul>
             <div className="flex gap-4 pt-6">
               <a href="https://www.instagram.com/godavaritoursandtravels?igsh=eTY3Y2pha3Z6ZDJz"><Image src={"/instagram.png"} alt={""} width={24} height={24}></Image></a>
-              <a href="#"><Image src={"/facebook.png"} alt={""} width={24} height={24}></Image></a>
+              <a href="https://www.facebook.com/Godavaritoursandtravels?mibextid=LQQJ4d"><Image src={"/facebook.png"} alt={""} width={24} height={24}></Image></a>
               <a href="https://www.linkedin.com/company/godavaritoursandtravels"><Image src={"/linkedin.png"} alt={""} width={24} height={24}></Image></a>
             </div>
           </div>
