@@ -367,6 +367,11 @@ export default function Home() {
               <p className="text-xs lg:text-base py-4">"Traveling with Godavari Tours and Travels was a fantastic experience. Their knowledgeable guides, seamless arrangements, and personalized touch made our trip extraordinary. We highly recommend their services!"</p>
               <p className="text-xs lg:text-base font-semibold">- Ms. Geethika Chadaram</p>
             </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={4} edit={false} />
+              <p className="text-xs lg:text-base py-4">"Traveling with Godavari Tours and Travels was an incredible experience. Their expert guides, flawless organization, and personalized attention made our trip unforgettable. We highly recommend their services!"</p>
+              <p className="text-xs lg:text-base font-semibold">- Ms. Sruthi N.</p>
+            </div>
           </div>
         </div>
         <a className="fixed right-4 bottom-4 opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394?text=Hi!" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
