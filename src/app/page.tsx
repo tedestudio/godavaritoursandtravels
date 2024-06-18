@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { ChangeEvent, FormEvent, useState } from "react";
+import ReactStars from "react-stars";
 
 export default function Home() {
-
 
   const images = [
     {
@@ -113,6 +113,7 @@ export default function Home() {
     phone: '',
     email: '',
     destination: '',
+    coupon: '',
     date: '',
   });
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -121,7 +122,7 @@ export default function Home() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    window.open('https://wa.me/919390909394?text=Name:%20' + formData.name + '%0APhone:%20' + formData.phone + '%0AEmail:%20' + formData.email + '%0ADestination:%20' + formData.destination + '%0ADate:%20' + formData.date, '_blank');
+    window.open('https://wa.me/919390909394?text=Name:%20' + formData.name + '%0APhone:%20' + formData.phone + '%0AEmail:%20' + formData.email + '%0ADestination:%20' + formData.destination + '%0ADate:%20' + formData.date + '%0ACoupon:%20' + formData.coupon, '_blank');
   };
   return (
     <main>
@@ -153,6 +154,10 @@ export default function Home() {
               <div className="flex flex-col w-full">
                 <label htmlFor="date">Date of Travel</label>
                 <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} required />
+              </div>
+              <div className="flex flex-col w-full">
+                <label htmlFor="coupon">Coupon</label>
+                <input type="text" id="coupon" name="coupon" placeholder="Coupon" value={formData.coupon} onChange={handleChange} />
               </div>
             </div>
             <button className="py-6 w-full bg-[orange] rounded-lg tracking-[5px]" type="submit">SUBMIT</button>
@@ -208,7 +213,7 @@ export default function Home() {
               <h6 id="placetext" className="absolute text-zinc-950 font-semibold text-xl tracking-widest shadow-2xl duration-200">KASHMIR</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
-              <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 " src={'/ladakh.jpeg'} alt="" width={250} height={250}></Image>
+              <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200 min-h-[167px]" src={'/ladakh.jpeg'} alt="" width={250} height={250}></Image>
               <h6 id="placetext" className="absolute text-zinc-950 font-semibold text-xl tracking-widest shadow-2xl duration-200">LADAKH</h6>
             </div>
             <div className="flex flex-col items-center justify-center py-12">
@@ -303,6 +308,67 @@ export default function Home() {
           </div>
         </div>
         {/* Testimonials */}
+        <div className="bg-white border-t-1 min-h-screen text-black flex flex-col  items-center justify-center py-24 px-6">
+          <h2 className=" text-4xl pt-3">TESTIMONIALS</h2>
+          <h2 className=" text-xl pb-6">What our clients say</h2>
+          <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"Excellent vacation family trip to Kashmir by Godavari tours and travels looking for future good vacation trips."</p>
+              <p className="text-xs lg:text-base font-semibold">- Dr. Srinivas</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"We are a family of 08 pax from Bangalore booked Goa trip by Godavari tours and travels they have given the wonderful service."</p>
+              <p className="text-xs lg:text-base font-semibold">- Mrs. Sridevi</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"I recently had a pleasure of using the services of godavari tours and travels and I must say I was thoroughly impressed. From the moment I contacted them to plan my trip their team was extremely helpful and professional."</p>
+              <p className="text-xs lg:text-base font-semibold">- Mr. Rama Reddy</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={4.5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"During my tour everything went smoothly and all the arrangements made by Godavari travels was excellent. I enjoyed the vacation to Araku with my family."</p>
+              <p className="text-xs lg:text-base font-semibold">- Mr. Paresh Jain</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={4} edit={false} />
+              <p className="text-xs lg:text-base py-4">"Overall, i would recommend Godavari tours and travels to anyone looking for a realible, efficient and professional travel agency. Thankyou for a wonderful experience"</p>
+              <p className="text-xs lg:text-base font-semibold">- Mr. Jayaram Chowdary</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"We have choosen Godavari tours and travels for our Dubai family vacation. They made the entire booking process seamless and stress free which allowed me to focus on getting excited for my trip."</p>
+              <p className="text-xs lg:text-base font-semibold">- Mr. Venkatesh K.</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"The best ever Travel agency, thankyou so much for making our honeymoon trip to Maldives so easy and stress free with the best hospitality. We would highly recommend Godavari tours and travels for future travel plans."</p>
+              <p className="text-xs lg:text-base font-semibold">- Mr. Anil Kumar</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={4} edit={false} />
+              <p className="text-xs lg:text-base py-4">"Our trip with Godavari Tours and Travels was simply unforgettable! Every detail was meticulously planned, and we experienced the beauty of each destination without a hitch. Highly recommended!"</p>
+              <p className="text-xs lg:text-base font-semibold">- Mr. Lochan Mathukumilli</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={4.5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"Exceptional service and attention to detail! Godavari Tours and Travels exceeded our expectations at every turn. Their team ensured we had an amazing and stress-free journey. Truly the best travel agency!"</p>
+              <p className="text-xs lg:text-base font-semibold">- Mr. Satwik Varma</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"Thankyou Godavari tours and travels for the wonderful group to chardham yatra. We are highly recommending you to all pilgrim and holidays tour packages."</p>
+              <p className="text-xs lg:text-base font-semibold">- Mrs. Deepthi Chowdary</p>
+            </div>
+            <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
+              <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
+              <p className="text-xs lg:text-base py-4">"Traveling with Godavari Tours and Travels was a fantastic experience. Their knowledgeable guides, seamless arrangements, and personalized touch made our trip extraordinary. We highly recommend their services!"</p>
+              <p className="text-xs lg:text-base font-semibold">- Ms. Geethika Chadaram</p>
+            </div>
+          </div>
+        </div>
         <a className="fixed right-4 bottom-4 opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394?text=Hi!" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
       </body>
     </main>
