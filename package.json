@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "@nextui-org/divider": "^2.0.28",
     "@nextui-org/system": "^2.2.1",
     "@nextui-org/theme": "^2.2.5",
+    "canvas-confetti": "^1.9.3",
     "framer-motion": "^11.2.10",
     "next": "14.2.3",
     "nodemailer": "^6.9.13",
@@ -23,6 +25,7 @@
     "resend": "^3.2.0"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.6.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -62,7 +62,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'DM Serif Display', serif;
+  font-family: 'DM Serif Display';
 }
 
 #memorable {
@@ -148,4 +148,17 @@ svg {
 
 .carousel-item div {
   height: 100%;
+}
+
+.web-curtain {
+  background-image: url('../../public/launch-bg.png');
+  background-size: cover;
+  background-position: center;
+
+}
+
+#main {
+  background-image: url('../../public/noise.png');
+  background-size: cover;
+  background-position: center;
 }

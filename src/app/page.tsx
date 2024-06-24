@@ -3,9 +3,16 @@
 import Image from "next/image";
 import { ChangeEvent, FormEvent, useState } from "react";
 import ReactStars from "react-stars";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import confetti from "canvas-confetti";
+import { func } from "prop-types";
+import CountdownTimer from "@/components/timer";
+
 
 export default function Home() {
-
+  const launchDate = '2024-07-08T11:11:00';
   const images = [
     {
       src: "about.jpeg",
@@ -124,8 +131,90 @@ export default function Home() {
     e.preventDefault();
     window.open('https://wa.me/919390909394?text=Name:%20' + formData.name + '%0APhone:%20' + formData.phone + '%0AEmail:%20' + formData.email + '%0ADestination:%20' + formData.destination + '%0ADate:%20' + formData.date + '%0ACoupon:%20' + formData.coupon, '_blank');
   };
+
+  // LAUNCH
+
+  var duration = 15 * 1000;
+  var animationEnd = Date.now() + duration;
+  var defaults = { startVelocity: 50, spread: 360, ticks: 60, zIndex: 9999 };
+
+  function randomInRange(min: number, max: number) {
+    return Math.random() * (max - min) + min;
+  }
+
+  const handleConfetti = () => {
+    var interval: NodeJS.Timeout = setInterval(function () {
+      var timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      var particleCount = 50 * (timeLeft / duration);
+      // since particles fall down, start a bit higher than random
+      confetti(
+        Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+        })
+      );
+      confetti(
+        Object.assign({}, defaults, {
+          particleCount,
+          origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+        })
+      );
+    }, 250);
+  };
+
+  gsap.registerPlugin(ScrollTrigger);
+  const runAnimation = () => {
+    handleConfetti();
+    gsap.fromTo(
+      "#bus",
+      { x: 0 },
+      { x: "200%", ease: "Power4.easeOut", stagger: 0.13, duration: 5 }
+    );
+    gsap.fromTo(
+      ".web-curtain",
+      { y: 0 },
+      { y: "-100%", ease: "Power4.easeOut", stagger: 0.13, duration: 2, delay: 3 }
+    );
+  };
+
   return (
     <main>
+      <div className="web-curtain fixed top-0 w-full h-full z-[2] bg-white flex items-center justify-center flex-col">
+        <img src="/janasena.png" alt="" className="fixed top-[40%] lg:top-[15%]" />
+        <div id="main" className="h-screen w-screen text-[#DA2824] p-5">
+          <div className="border-[#DA2824] border-dashed h-full rounded-3xl border-2 p-4">
+            <div className="flex flex-col lg:flex-row items-center justify-between">
+              <div className="flex gap-8 lg:gap-2 justify-center">
+                <img src="/tdp.png" alt="tdp" className="w-2/12 lg:w-5/12" />
+                <img src="/yuva.png" alt="yuvasena" className="w-2/12 lg:w-5/12" />
+                <img src="/bjp.png" alt="bjp" className="w-2/12 lg:w-5/12" />
+              </div>
+
+              <img src="/logo.png" alt="logo" className="w-3/4 h-auto lg:w-1/4 py-4 lg:p-0" />
+            </div>
+            <img src="/political.png" alt="leaders" className="absolute bottom-0 left-0 w-3/4 lg:w-1/2" />
+            <div className="lg:float-right text-center lg:py-14">
+              <h1 className="text-3xl lg:text-7xl lg:pt-6">Launching Soon !</h1>
+              <p className="text-base text-black pt-4 lg:pt-8">Our website will be soon launched by,</p>
+              <h1 className="text-3xl py-2 lg:py-4">Sri Kandula Durgesh</h1>
+              <p className="text-base text-black pt-1 lg:pt-2">Hon’ble Minister of Tourism & Culture</p>
+              <p className="text-xs text-black">Government of Andhra Pradesh</p>
+              <CountdownTimer targetDate={launchDate} />
+            </div>
+            <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 pt-6 absolute right-8 bottom-8 lg:right-14 lg:bottom-14">
+              <a href="https://wa.me/919390909394?text=Hi!"><Image className="w-10/12 lg:w-full" src={"/whatsapp.png"} alt={""} width={32} height={24}></Image></a>
+              <a href="https://www.instagram.com/godavaritoursandtravels?igsh=eTY3Y2pha3Z6ZDJz"><Image className="w-10/12 lg:w-full" src={"/instagram.png"} alt={""} width={32} height={24}></Image></a>
+              <a href="https://www.facebook.com/Godavaritoursandtravels?mibextid=LQQJ4d"><Image className="w-10/12 lg:w-full" src={"/facebook.png"} alt={""} width={32} height={24}></Image></a>
+              <a href="https://www.linkedin.com/company/godavaritoursandtravels"><Image className="w-10/12 lg:w-full" src={"/linkedin.png"} alt={""} width={32} height={24}></Image></a>
+            </div>
+          </div>
+        </div>
+      </div>
       <body className="">
         <div id="home" className="min-h-screen flex flex-col items-center justify-center px-2 z-10 lg:px-12 py-32 lg:p-0">
           <div className="text-center">
@@ -379,3 +468,35 @@ export default function Home() {
     </main>
   );
 }
+
+
+// export default function Home() {
+//   const launchDate = '2024-04-08T11:11:00';
+//   return (
+//     <main>
+//       <img src="/janasena.png" alt="" className="fixed top-[15%]" />
+//       <div id="main" className="h-screen w-screen text-[#DA2824] p-5">
+//         <div className="border-[#DA2824] border-dashed h-full rounded-3xl border-2 p-4">
+//           <div className="flex justify-between">
+//             <div className="flex gap-2">
+//               <img src="/tdp.png" alt="tdp" className="w-5/12" />
+//               <img src="/yuva.png" alt="yuvasena" className="w-5/12" />
+//               <img src="/bjp.png" alt="bjp" className="w-5/12" />
+//             </div>
+
+//             <img src="/logo.png" alt="logo" className="w-1/4" />
+//           </div>
+//           <img src="/political.png" alt="leaders" className="absolute bottom-0 left-0 w-1/2" />
+//           <div className="float-right text-center">
+//             <h1 className="text-6xl py-8">Launching Soon..</h1>
+//             <p className="text-lg text-black">Our website will be soon launched by,</p>
+//             <h1 className="text-4xl pt-4">Sri Kandula Durgesh</h1>
+//             <h1 className="text-lg text-black">Hon’ble Minister of Tourism & Culture</h1>
+//             <h1 className="text-base text-black">Government of Andhra Pradesh</h1>
+//             <CountdownTimer targetDate={launchDate} />
+//           </div>
+//         </div>
+//       </div>
+//     </main>
+//   );
+// }
