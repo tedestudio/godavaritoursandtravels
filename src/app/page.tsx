@@ -184,7 +184,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="web-curtain fixed top-0 w-full min-h-full z-[2] bg-white flex items-center justify-center flex-col">
+      <div className="web-curtain fixed top-0 w-full min-h-screen z-[2] bg-white flex items-center justify-center flex-col">
         <img src="/janasena.png" alt="" className="fixed top-[40%] lg:top-[15%]" />
         <div id="main" className="h-screen w-screen text-[#DA2824] p-5">
           <div className="border-[#DA2824] border-dashed h-full rounded-3xl border-2 p-4">
