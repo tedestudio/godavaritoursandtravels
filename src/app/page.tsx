@@ -184,7 +184,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="web-curtain fixed top-0 w-full h-full z-[2] bg-white flex items-center justify-center flex-col">
+      <div className="web-curtain fixed top-0 w-full min-h-full z-[2] bg-white flex items-center justify-center flex-col">
         <img src="/janasena.png" alt="" className="fixed top-[40%] lg:top-[15%]" />
         <div id="main" className="h-screen w-screen text-[#DA2824] p-5">
           <div className="border-[#DA2824] border-dashed h-full rounded-3xl border-2 p-4">
@@ -198,19 +198,20 @@ export default function Home() {
               <img src="/logo.png" alt="logo" className="w-3/4 h-auto lg:w-1/4 py-4 lg:p-0" />
             </div>
             <img src="/political.png" alt="leaders" className="absolute bottom-0 left-0 w-3/4 lg:w-1/2" />
+
             <div className="lg:float-right text-center lg:py-14">
               <h1 className="text-3xl lg:text-7xl lg:pt-6">Launching Soon !</h1>
-              <p className="text-base text-black pt-4 lg:pt-8">Our website will be soon launched by,</p>
-              <h1 className="text-3xl py-2 lg:py-4">Sri Kandula Durgesh</h1>
-              <p className="text-base text-black pt-1 lg:pt-2">Hon’ble Minister of Tourism & Culture</p>
-              <p className="text-xs text-black">Government of Andhra Pradesh</p>
+              <p className="text-base lg:text-lg text-black pt-4 lg:pt-8">Our website will be soon launched by,</p>
+              <h1 className="text-3xl lg:text-5xl py-2 lg:py-4">Sri Kandula Durgesh</h1>
+              <p className="text-base lg:text-lg text-black pt-1 lg:pt-2">Hon’ble Minister of Tourism & Culture</p>
+              <p className="text-xs lg:text-base text-black">Government of Andhra Pradesh</p>
               <CountdownTimer targetDate={launchDate} />
             </div>
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 pt-6 absolute right-8 bottom-8 lg:right-14 lg:bottom-14">
-              <a href="https://wa.me/919390909394?text=Hi!"><Image className="w-10/12 lg:w-full" src={"/whatsapp.png"} alt={""} width={32} height={24}></Image></a>
-              <a href="https://www.instagram.com/godavaritoursandtravels?igsh=eTY3Y2pha3Z6ZDJz"><Image className="w-10/12 lg:w-full" src={"/instagram.png"} alt={""} width={32} height={24}></Image></a>
-              <a href="https://www.facebook.com/Godavaritoursandtravels?mibextid=LQQJ4d"><Image className="w-10/12 lg:w-full" src={"/facebook.png"} alt={""} width={32} height={24}></Image></a>
-              <a href="https://www.linkedin.com/company/godavaritoursandtravels"><Image className="w-10/12 lg:w-full" src={"/linkedin.png"} alt={""} width={32} height={24}></Image></a>
+              <a href="https://wa.me/919390909394?text=Hi!"><Image src={"/whatsapp.png"} alt={""} width={32} height={24}></Image></a>
+              <a href="https://www.instagram.com/godavaritoursandtravels?igsh=eTY3Y2pha3Z6ZDJz"><Image src={"/instagram.png"} alt={""} width={32} height={24}></Image></a>
+              <a href="https://www.facebook.com/Godavaritoursandtravels?mibextid=LQQJ4d"><Image src={"/facebook.png"} alt={""} width={32} height={24}></Image></a>
+              <a href="https://www.linkedin.com/company/godavaritoursandtravels"><Image src={"/linkedin.png"} alt={""} width={32} height={24}></Image></a>
             </div>
           </div>
         </div>
