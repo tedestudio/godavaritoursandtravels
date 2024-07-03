@@ -50,7 +50,7 @@ const runAnimation = () => {
     gsap.fromTo(
         ".web-curtain",
         { y: 0 },
-        { y: "-100%", ease: "Power4.easeOut", stagger: 0.13, duration: 2 }
+        { y: "-100%", ease: "Power4.easeOut", stagger: 0.13, duration: 2, delay: 3 }
     );
 };
 
@@ -96,17 +96,22 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     const isTimeUp = Object.values(timeLeft).every(value => value === 0);
 
     return (
-        <div className="flex justify-center items-center space-x-8 py-6 lg:py-14">
-            {isTimeUp ? (
-                <button onClick={runAnimation} className="bg-red-600 text-white py-2 px-4 rounded z-[999999]">Launch</button>
-            ) : (
-                Object.entries(timeLeft).map(([unit, value]) => (
-                    <div key={unit} className="text-center">
-                        <h1 className="text-4xl lg:text-6xl text-red-600">{value}</h1>
-                        <div className="text-xs lg:text-xl">{unit.toUpperCase()}</div>
-                    </div>
-                ))
-            )}
+        <div className='py-6 lg:py-14'>
+            {
+                isTimeUp ? (<span></span>) : (<p className="text-black">LAUNCHING IN..</p>)
+            }
+            <div className="flex justify-center items-center space-x-8">
+                {isTimeUp ? (
+                    <button onClick={runAnimation} className="bg-red-600 text-white py-2 px-4 rounded z-[999999]">Launch</button>
+                ) : (
+                    Object.entries(timeLeft).map(([unit, value]) => (
+                        <div key={unit} className="text-center">
+                            <h1 className="text-4xl lg:text-6xl text-red-600">{value}</h1>
+                            <div className="text-xs text-black lg:text-xl">{unit.toUpperCase()}</div>
+                        </div>
+                    ))
+                )}
+            </div>
         </div>
     );
 };

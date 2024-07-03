@@ -61,7 +61,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+h1>span {
   font-family: 'DM Serif Display';
 }
 
@@ -151,7 +152,7 @@ svg {
 }
 
 .web-curtain {
-  background-image: url('../../public/launch-bg.png');
+  background-image: url('../../public/launch-bg-2.jpeg');
   background-size: cover;
   background-position: center;
 
@@ -161,4 +162,32 @@ svg {
   background-image: url('../../public/noise.png');
   background-size: cover;
   background-position: center;
+}
+
+/* TEXT ANIMATION */
+.text-animation {
+  position: relative;
+}
+
+.text-animation::before {
+  content: "pride";
+  animation: changeText 9s infinite;
+}
+
+@keyframes changeText {
+
+  0%,
+  33% {
+    content: "Pride";
+  }
+
+  34%,
+  66% {
+    content: "Culture";
+  }
+
+  67%,
+  100% {
+    content: "Heritage";
+  }
 }

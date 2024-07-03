@@ -184,8 +184,8 @@ export default function Home() {
 
   return (
     <main>
-      <div className="web-curtain fixed top-0 w-full min-h-screen z-[2] bg-white flex items-center justify-center flex-col">
-        <img src="/janasena.png" alt="" className="fixed top-[40%] lg:top-[15%]" />
+      <div className="web-curtain fixed top-0 w-full min-h-screen z-[2] bg-white flex items-center justify-start py-36 flex-col">
+        {/* <img src="/janasena.png" alt="" className="fixed top-[40%] lg:top-[15%]" />
         <div id="main" className="h-screen w-screen text-[#DA2824] p-5">
           <div className="border-[#DA2824] border-dashed h-full rounded-3xl border-2 p-4">
             <div className="flex flex-col lg:flex-row items-center justify-between">
@@ -214,7 +214,16 @@ export default function Home() {
               <a href="https://www.linkedin.com/company/godavaritoursandtravels"><Image src={"/linkedin.png"} alt={""} width={32} height={24}></Image></a>
             </div>
           </div>
+        </div> */}
+        <div className="flex gap-8 lg:gap-2 justify-start absolute top-0 left-0 p-4">
+          <img src="/cbn.png" alt="tdp" className="w-2/12 lg:h-[20%]" />
+          <img src="/pawan.png" alt="yuvasena" className="w-2/12 lg:h-[20%]" />
+          <img src="/bjp.png" alt="bjp" className="w-2/12 lg:h-[20%]" />
+          <img src="/durgesh.png" alt="bjp" className="w-2/12 lg:h-[20%]" />
         </div>
+        <h1 className="text-black text-3xl text-center lg:text-5xl">Celebrating the <span className="text-animation"></span> of Indian Tourism</h1>
+        <CountdownTimer targetDate={launchDate} />
+        <img className="w-full lg:w-1/3 absolute bottom-0 left-0" id="bus" src="/bus-2.png" alt="bus" />
       </div>
       <body className="">
         <div id="home" className="min-h-screen flex flex-col items-center justify-center px-2 z-10 lg:px-12 py-32 lg:p-0">
@@ -469,35 +478,3 @@ export default function Home() {
     </main>
   );
 }
-
-
-// export default function Home() {
-//   const launchDate = '2024-04-08T11:11:00';
-//   return (
-//     <main>
-//       <img src="/janasena.png" alt="" className="fixed top-[15%]" />
-//       <div id="main" className="h-screen w-screen text-[#DA2824] p-5">
-//         <div className="border-[#DA2824] border-dashed h-full rounded-3xl border-2 p-4">
-//           <div className="flex justify-between">
-//             <div className="flex gap-2">
-//               <img src="/tdp.png" alt="tdp" className="w-5/12" />
-//               <img src="/yuva.png" alt="yuvasena" className="w-5/12" />
-//               <img src="/bjp.png" alt="bjp" className="w-5/12" />
-//             </div>
-
-//             <img src="/logo.png" alt="logo" className="w-1/4" />
-//           </div>
-//           <img src="/political.png" alt="leaders" className="absolute bottom-0 left-0 w-1/2" />
-//           <div className="float-right text-center">
-//             <h1 className="text-6xl py-8">Launching Soon..</h1>
-//             <p className="text-lg text-black">Our website will be soon launched by,</p>
-//             <h1 className="text-4xl pt-4">Sri Kandula Durgesh</h1>
-//             <h1 className="text-lg text-black">Hon’ble Minister of Tourism & Culture</h1>
-//             <h1 className="text-base text-black">Government of Andhra Pradesh</h1>
-//             <CountdownTimer targetDate={launchDate} />
-//           </div>
-//         </div>
-//       </div>
-//     </main>
-//   );
-// }
