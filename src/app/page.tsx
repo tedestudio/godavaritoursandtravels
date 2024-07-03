@@ -14,7 +14,8 @@ import Marquee from "@/components/marquee";
 
 
 export default function Home() {
-  const launchDate = '2024-07-08T11:11:00';
+  // const launchDate = '2024-07-08T11:11:00';
+  const launchDate = '2024-07-03T23:25:40';
   const images = [
     {
       src: "about.jpeg",
