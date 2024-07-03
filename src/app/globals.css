@@ -124,45 +124,18 @@ svg {
   font-family: 'Open Sans', sans-serif;
 }
 
-
-.carousel {
-  position: relative;
-  width: 270px;
-  height: 160px;
-  overflow: hidden;
-  background-color: #cdcdcd;
-}
-
-.carousel-item {
-  position: absolute;
-  width: 100%;
-  height: 270px;
-  border: none;
-  top: 0;
-  left: 100%;
-}
-
-.carousel-item.active {
-  left: 0;
-  transition: all 0.3s ease-out;
-}
-
-.carousel-item div {
-  height: 100%;
-}
-
 .web-curtain {
-  background-image: url('../../public/launch-bg-2.jpeg');
+  background: url('../../public/launch-bg-2.jpeg');
   background-size: cover;
   background-position: center;
 
 }
 
-#main {
+/* #main {
   background-image: url('../../public/noise.png');
   background-size: cover;
   background-position: center;
-}
+} */
 
 /* TEXT ANIMATION */
 .text-animation {

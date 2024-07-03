@@ -532,7 +532,7 @@ export default function Home() {
           </div>
         </div>
         {/* Testimonials */}
-        <div id="testimonials" className="bg-white border-t-1 min-h-screen text-black flex flex-col  items-center justify-center py-24 px-6">
+        <div id="testimonials" className="bg-white border-t-1 min-h-screen text-black flex flex-col  items-center justify-center py-24 px-6 overflow-clip">
           <h2 className=" text-4xl pt-3">TESTIMONIALS</h2>
           <h2 className=" text-xl pb-6">What our clients say</h2>
           {/* <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-3 gap-4">
