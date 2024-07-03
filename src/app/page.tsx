@@ -9,6 +9,8 @@ import gsap from "gsap";
 import confetti from "canvas-confetti";
 import { func } from "prop-types";
 import CountdownTimer from "@/components/timer";
+import { cn } from "@/utils";
+import Marquee from "@/components/marquee";
 
 
 export default function Home() {
@@ -115,6 +117,129 @@ export default function Home() {
     }
 
   ];
+  const reviews = [
+    {
+      name: "Dr. Srinivas",
+      username: "",
+      body: "Excellent vacation family trip to Kashmir by Godavari tours and travels looking for future good vacation trips.",
+      img: "",
+      rating: 5,
+    },
+    {
+      name: "Mrs. Sridevi",
+      username: "",
+      body: "We are a family of 08 pax from Bangalore booked Goa trip by Godavari tours and travels they have given the wonderful service.",
+      img: "",
+      rating: 5,
+    },
+    {
+      name: "Mr. Rama Reddy",
+      username: "",
+      body: "I recently had a pleasure of using the services of godavari tours and travels and I must say I was thoroughly impressed. From the moment I contacted them to plan my trip their team was extremely helpful and professional.",
+      img: "",
+      rating: 5,
+    },
+    {
+      name: "Mr. Paresh Jain",
+      username: "",
+      body: "During my tour everything went smoothly and all the arrangements made by Godavari travels was excellent. I enjoyed the vacation to Araku with my family.",
+      img: "",
+      rating: 4.5,
+    },
+    {
+      name: "Mr. Jayaram Chowdary",
+      username: "",
+      body: "Overall, I would recommend Godavari tours and travels to anyone looking for a reliable, efficient and professional travel agency. Thank you for a wonderful experience.",
+      img: "",
+      rating: 4,
+    },
+    {
+      name: "Mr. Venkatesh K.",
+      username: "",
+      body: "We have chosen Godavari tours and travels for our Dubai family vacation. They made the entire booking process seamless and stress free which allowed me to focus on getting excited for my trip.",
+      img: "",
+      rating: 5,
+    },
+    {
+      name: "Mr. Anil Kumar",
+      username: "",
+      body: "The best ever Travel agency, thank you so much for making our honeymoon trip to Maldives so easy and stress free with the best hospitality. We would highly recommend Godavari tours and travels for future travel plans.",
+      img: "",
+      rating: 5,
+    },
+    {
+      name: "Mr. Lochan Mathukumilli",
+      username: "",
+      body: "Our trip with Godavari Tours and Travels was simply unforgettable! Every detail was meticulously planned, and we experienced the beauty of each destination without a hitch. Highly recommended!",
+      img: "",
+      rating: 4,
+    },
+    {
+      name: "Ms. Geethika Chadaram",
+      username: "",
+      body: "Traveling with Godavari Tours and Travels was a fantastic experience. Their knowledgeable guides, seamless arrangements, and personalized touch made our trip extraordinary. We highly recommend their services!",
+      img: "",
+      rating: 5,
+    },
+    {
+      name: "Mr. Satwik Varma",
+      username: "",
+      body: "Exceptional service and attention to detail! Godavari Tours and Travels exceeded our expectations at every turn. Their team ensured we had an amazing and stress-free journey. Truly the best travel agency!",
+      img: "",
+      rating: 4.5,
+    },
+    {
+      name: "Mrs. Deepthi Chowdary",
+      username: "",
+      body: "Thank you Godavari tours and travels for the wonderful group to Chardham Yatra. We are highly recommending you to all pilgrim and holidays tour packages.",
+      img: "",
+      rating: 5,
+    },
+    {
+      name: "Ms. Sruthi N.",
+      username: "",
+      body: "Traveling with Godavari Tours and Travels was an incredible experience. Their expert guides, flawless organization, and personalized attention made our trip unforgettable. We highly recommend their services!",
+      img: "",
+      rating: 4,
+    },
+  ];
+
+  const firstRow = reviews.slice(0, reviews.length / 2);
+  const secondRow = reviews.slice(reviews.length / 2);
+
+  const ReviewCard = ({
+    img,
+    name,
+    username,
+    body,
+    rating,
+  }: {
+    img: string;
+    name: string;
+    username: string;
+    body: string;
+    rating: number;
+  }) => {
+    return (
+      <figure
+        className={cn(
+          "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 bg-[#ffa6005c]",
+        )}
+      >
+        <div className="flex flex-row items-center gap-2">
+          <div className="flex flex-col">
+            <ReactStars count={5} size={24} color2={'#000000'} value={rating} edit={false} />
+            <h1 className="text-xl font-medium">
+              {name}
+            </h1>
+          </div>
+        </div>
+        <blockquote className="mt-2 text-sm">{body}</blockquote>
+      </figure>
+    );
+  };
+
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -410,7 +535,7 @@ export default function Home() {
         <div id="testimonials" className="bg-white border-t-1 min-h-screen text-black flex flex-col  items-center justify-center py-24 px-6">
           <h2 className=" text-4xl pt-3">TESTIMONIALS</h2>
           <h2 className=" text-xl pb-6">What our clients say</h2>
-          <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="flex flex-col items-center justify-center p-4 bg-[#ffa600d7] rounded-lg py-4">
               <ReactStars count={5} size={24} color2={'#000000'} value={5} edit={false} />
               <p className="text-xs lg:text-base py-4">"Excellent vacation family trip to Kashmir by Godavari tours and travels looking for future good vacation trips."</p>
@@ -471,7 +596,17 @@ export default function Home() {
               <p className="text-xs lg:text-base py-4">"Traveling with Godavari Tours and Travels was an incredible experience. Their expert guides, flawless organization, and personalized attention made our trip unforgettable. We highly recommend their services!"</p>
               <p className="text-xs lg:text-base font-semibold">- Ms. Sruthi N.</p>
             </div>
-          </div>
+          </div> */}
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:20s]">
+            {secondRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
         </div>
         <a className="fixed right-4 bottom-4 opacity-90 hover:opacity-100 duration-200" href="https://wa.me/919390909394?text=Hi!" target="_blank"><Image src="/whatsapp.png" alt="footer" width={74} height={74} /></a>
       </body>
