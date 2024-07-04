@@ -84,6 +84,9 @@ footer {
   background-image: linear-gradient(rgba(255, 255, 255, 0.866), rgba(255, 255, 255, 0.711)),
     url('../../public/bg.png');
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 #whychoose {

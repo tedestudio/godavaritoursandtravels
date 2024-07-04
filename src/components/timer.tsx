@@ -131,14 +131,21 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
     return (
         <div className='py-6 lg:py-14'>
             {
-                isTimeUp ? (<span></span>) : (<p className="text-black">LAUNCHING IN..</p>)
+                isTimeUp ? (<span></span>) : (
+                    <div className="text-black text-center">
+                        <p className='text-2xl py-4'>Welcome to Godavari Tours & Travels</p>
+                        <p>our website will be launched by</p>
+                        <h1 className='text-6xl py-2'>Sri Kandula Durgesh</h1>
+                        <h3 className='text-xl'>Hon'ble Minister of Tourism, Culture, and Cinematography</h3>
+                    </div>
+                )
             }
             <div className="flex justify-center items-center space-x-8">
                 {isTimeUp ? (
-                    <button onClick={runAnimation} className="bg-red-600 text-white py-2 px-4 rounded z-[999999]">Launch</button>
+                    <button onClick={runAnimation} className="bg-red-600 text-white tracking-widest text-4xl py-4 px-8 rounded z-[999999]">LAUNCH</button>
                 ) : (
                     Object.entries(timeLeft).map(([unit, value]) => (
-                        <div key={unit} className="text-center">
+                        <div key={unit} className="text-center py-12">
                             <h1 className="text-4xl lg:text-6xl text-red-600">{value}</h1>
                             <div className="text-xs text-black lg:text-xl">{unit.toUpperCase()}</div>
                         </div>

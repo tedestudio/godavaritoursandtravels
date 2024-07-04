@@ -21,8 +21,8 @@ export default function RootLayout({
       <Link href={"https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"} prefetch={true}></Link>
       <header className="fixed top-0 left-0 right-0">
         <div className="w-full bg-[orange] py-2 flex justify-between items-center px-6 text-xs lg:text-base">
-          <div className="flex"><img className="w-3 h-3 lg:w-5 lg:h-5" src="/email-icon.png" alt="" /><p className="px-2">godavaritravelsindia@gmail.com</p></div>
-          <div className="flex"><img className="w-3 h-3 lg:w-5 lg:h-5" src="/phone.png" alt="" /><p className="px-2">+91 93909 09394</p></div>
+          <a className="hover:text-black" href="mailto:godavaritravelsindia@gmail.com"><div className="flex"><img className="w-3 h-3 lg:w-5 lg:h-5" src="/email-icon.png" alt="" /><p className="px-2">godavaritravelsindia@gmail.com</p></div></a>
+          <a className="hover:text-black" href="https://wa.me/919390909394?text=Hi!"><div className="flex"><img className="w-3 h-3 lg:w-5 lg:h-5" src="/phone.png" alt="" /><p className="px-2">+91 93909 09394</p></div></a>
         </div>
         <div className="flex items-center justify-between h-[5.5em] bg-white z-[10] p-8 shadow-lg">
           <Image src="/logo.png" alt="logo" width={300} height={100} />
@@ -41,12 +41,15 @@ export default function RootLayout({
       <footer className="w-full bg-white text-black text-center flex flex-col px-12 py-4">
         <div className="flex flex-col lg:flex-row items-start justify-evenly gap-12">
           <div className="h-full w-full text-left flex flex-col gap-4">
-            <Image src={"/logo.png"} alt={""} width={250} height={0}></Image>
-            <Image src={"/irctc.png"} alt={""} width={150} height={0}></Image>
-            <Image src={"/ttaa.png"} alt={""} width={150} height={0}></Image>
-            <Image src={"/toat.png"} alt={""} width={150} height={0}></Image>
+            <Image src={"/logo.png"} alt={""} width={350} height={0}></Image>
+            <div className="grid grid-flow-row grid-cols-2 items-center justify-center gap-12">
+              <Image src={"/irctc.png"} alt={""} width={200} height={0}></Image>
+              <Image src={"/ttaa.png"} alt={""} width={200} height={0}></Image>
+              <Image src={"/toat.png"} alt={""} width={200} height={0}></Image>
+              <Image src={"/connectindia.png"} alt={""} width={200} height={0}></Image>
+            </div>
           </div>
-          <div className="text-left px-12 w-1/2">
+          <div className="text-left lg:px-12 lg:w-1/2 w-full flex items-start justify-evenly lg:block">
             <div className="">
               <h1 className="text-xl py-2">Links</h1>
               <ul className="flex flex-col gap-1 text-gray-800">

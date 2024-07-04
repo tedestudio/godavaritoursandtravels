@@ -14,8 +14,8 @@ import Marquee from "@/components/marquee";
 
 
 export default function Home() {
-  // const launchDate = '2024-07-08T11:11:00';
-  const launchDate = '2024-07-03T23:25:40';
+  const launchDate = '2024-07-08T11:11:00';
+  // const launchDate = '2024-07-03T23:25:40';
   const images = [
     {
       src: "about.jpeg",
@@ -310,43 +310,14 @@ export default function Home() {
 
   return (
     <main>
-      <div className="web-curtain fixed top-0 w-full min-h-screen z-[2] bg-white flex items-center justify-start py-36 flex-col">
-        {/* <img src="/janasena.png" alt="" className="fixed top-[40%] lg:top-[15%]" />
-        <div id="main" className="h-screen w-screen text-[#DA2824] p-5">
-          <div className="border-[#DA2824] border-dashed h-full rounded-3xl border-2 p-4">
-            <div className="flex flex-col lg:flex-row items-center justify-between">
-              <div className="flex gap-8 lg:gap-2 justify-center">
-                <img src="/tdp.png" alt="tdp" className="w-2/12 lg:w-5/12" />
-                <img src="/yuva.png" alt="yuvasena" className="w-2/12 lg:w-5/12" />
-                <img src="/bjp.png" alt="bjp" className="w-2/12 lg:w-5/12" />
-              </div>
-
-              <img src="/logo.png" alt="logo" className="w-3/4 h-auto lg:w-1/4 py-4 lg:p-0" />
-            </div>
-            <img src="/political.png" alt="leaders" className="absolute bottom-0 left-0 w-3/4 lg:w-1/2" />
-
-            <div className="lg:float-right text-center lg:py-14">
-              <h1 className="text-3xl lg:text-7xl lg:pt-6">Launching Soon !</h1>
-              <p className="text-base lg:text-lg text-black pt-4 lg:pt-8">Our website will be soon launched by,</p>
-              <h1 className="text-3xl lg:text-5xl py-2 lg:py-4">Sri Kandula Durgesh</h1>
-              <p className="text-base lg:text-lg text-black pt-1 lg:pt-2">Hon’ble Minister of Tourism & Culture</p>
-              <p className="text-xs lg:text-base text-black">Government of Andhra Pradesh</p>
-              <CountdownTimer targetDate={launchDate} />
-            </div>
-            <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 pt-6 absolute right-8 bottom-8 lg:right-14 lg:bottom-14">
-              <a href="https://wa.me/919390909394?text=Hi!"><Image src={"/whatsapp.png"} alt={""} width={32} height={24}></Image></a>
-              <a href="https://www.instagram.com/godavaritoursandtravels?igsh=eTY3Y2pha3Z6ZDJz"><Image src={"/instagram.png"} alt={""} width={32} height={24}></Image></a>
-              <a href="https://www.facebook.com/Godavaritoursandtravels?mibextid=LQQJ4d"><Image src={"/facebook.png"} alt={""} width={32} height={24}></Image></a>
-              <a href="https://www.linkedin.com/company/godavaritoursandtravels"><Image src={"/linkedin.png"} alt={""} width={32} height={24}></Image></a>
-            </div>
-          </div>
-        </div> */}
+      <div className="web-curtain fixed top-0 w-full min-h-screen z-[2] bg-white flex items-center justify-start py-24 flex-col">
         <div className="flex gap-8 lg:gap-2 justify-start absolute top-0 left-0 p-4">
           <img src="/cbn.png" alt="tdp" className="w-2/12 lg:h-[20%]" />
           <img src="/pawan.png" alt="yuvasena" className="w-2/12 lg:h-[20%]" />
           <img src="/bjp.png" alt="bjp" className="w-2/12 lg:h-[20%]" />
           <img src="/durgesh.png" alt="bjp" className="w-2/12 lg:h-[20%]" />
         </div>
+        <h1 className="text-black text-3xl text-center lg:text-5xl"></h1>
         <h1 className="text-black text-3xl text-center lg:text-5xl">Celebrating the <span className="text-animation"></span> of Indian Tourism</h1>
         <CountdownTimer targetDate={launchDate} />
         <img className="w-full lg:w-1/3 absolute bottom-0 left-0" id="bus" src="/bus-2.png" alt="bus" />
@@ -391,7 +362,7 @@ export default function Home() {
         <div id="about" className="min-h-screen bg-white text-center place-content-center px-4 py-12">
           <div className="lg:flex items-end justify-evenly py-4 text-left">
             <Image className="rounded-lg shadow-2xl hover:shadow-lg duration-200 grayscale hover:grayscale-0" src="/about.jpeg" alt="about" width={600} height={300} />
-            <div className="text-amber-950 flex flex-col gap-4 lg:gap-12 lg:w-2/5 leading-8">
+            <div className="text-black flex flex-col gap-4 lg:gap-12 lg:w-2/5 leading-8">
               <div>
                 <h2 className="text-base lg:text-lg">About Godavari Tours & Travels</h2>
                 <h2 className="text-4xl">Few Words About Us</h2>
@@ -598,12 +569,12 @@ export default function Home() {
               <p className="text-xs lg:text-base font-semibold">- Ms. Sruthi N.</p>
             </div>
           </div> */}
-          <Marquee pauseOnHover className="[--duration:20s]">
+          <Marquee pauseOnHover className="[--duration:20s] z-0">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:20s]">
+          <Marquee reverse pauseOnHover className="[--duration:20s] z-0">
             {secondRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}
