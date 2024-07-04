@@ -19,6 +19,14 @@ export default function RootLayout({
       <Link href={"https://fonts.googleapis.com"} prefetch={true}></Link>
       <Link href={"https://fonts.gstatic.com"} prefetch={true}></Link>
       <Link href={"https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"} prefetch={true}></Link>
+      <meta name="title" content="Godavari Tours & Travels" />
+      <meta name="description" content="Top Travel Agency in Andhra Pradesh, established in East Godavari as Godavari Tours & Travels." />
+      <meta name="keywords" content="Travel, Travels, Tour, Tours, Godavari, Vacation, Trips, Planning, Travel Agency, Agency, Bus, Flights, Holidays, Destinations, Sightseeing, Adventure, Itinerary, Booking, Reservations, Travel Packages, Deals, Discounts, Family Travel, Solo Travel, Group Travel, Honeymoon, Beach, Mountain, Cultural Tours, Eco Tours, Luxury Travel, Budget Travel, Road Trips, City Tours, Wildlife Tours, Historical Tours, Cruise, Accommodation, Hotels, Resorts, Travel Guide, Transportation, Travel Tips, Travel Deals" />
+      <meta name="robots" content="index, follow" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="language" content="English" />
+      <meta name="revisit-after" content="1 days" />
+
       <header className="fixed top-0 left-0 right-0">
         <div className="w-full bg-[orange] py-2 flex justify-between items-center px-6 text-xs lg:text-base">
           <a className="hover:text-black" href="mailto:godavaritravelsindia@gmail.com"><div className="flex"><img className="w-3 h-3 lg:w-5 lg:h-5" src="/email-icon.png" alt="" /><p className="px-2">godavaritravelsindia@gmail.com</p></div></a>
