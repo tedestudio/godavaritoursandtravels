@@ -15,7 +15,7 @@ import Popup from "@/components/popup";
 
 
 export default function Home() {
-  const launchDate = '2024-02-08T09:00:00';
+  // const launchDate = '2024-02-08T09:00:00';
 
 
 
@@ -263,112 +263,93 @@ export default function Home() {
 
   // LAUNCH
 
-  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(ScrollTrigger);
 
-  const duration = 25 * 1000;
-  const animationEnd = Date.now() + duration;
-  const defaults = { startVelocity: 50, spread: 360, ticks: 60, zIndex: 9999 };
+  // const duration = 25 * 1000;
+  // const animationEnd = Date.now() + duration;
+  // const defaults = { startVelocity: 50, spread: 360, ticks: 60, zIndex: 9999 };
 
-  function randomInRange(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
+  // function randomInRange(min: number, max: number) {
+  //   return Math.random() * (max - min) + min;
+  // }
 
-  const runAnimation = (setShowPopup: (value: boolean) => void) => {
-    const interval = window.setInterval(() => {
-      const timeLeft = animationEnd - Date.now();
+  // const runAnimation = (setShowPopup: (value: boolean) => void) => {
+  //   const interval = window.setInterval(() => {
+  //     const timeLeft = animationEnd - Date.now();
 
-      if (timeLeft <= 0) {
-        return clearInterval(interval);
-      }
+  //     if (timeLeft <= 0) {
+  //       return clearInterval(interval);
+  //     }
 
-      const particleCount = 50 * (timeLeft / duration);
-      confetti({
-        ...defaults,
-        particleCount,
-        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-      });
-      confetti({
-        ...defaults,
-        particleCount,
-        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
-      });
-    }, 250);
+  //     const particleCount = 50 * (timeLeft / duration);
+  //     confetti({
+  //       ...defaults,
+  //       particleCount,
+  //       origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+  //     });
+  //     confetti({
+  //       ...defaults,
+  //       particleCount,
+  //       origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+  //     });
+  //   }, 250);
 
-    const end = Date.now() + 3 * 1000; // 3 seconds
-    const colors = ["#a786ff", "#fd8bbc", "#eca184", "#f8deb1"];
+  //   const end = Date.now() + 3 * 1000; // 3 seconds
+  //   const colors = ["#a786ff", "#fd8bbc", "#eca184", "#f8deb1"];
 
-    const frame = () => {
-      if (Date.now() > end) {
-        setShowPopup(true); // Show popup after animation ends
-        return;
-      }
+  //   const frame = () => {
+  //     if (Date.now() > end) {
+  //       setShowPopup(true); // Show popup after animation ends
+  //       return;
+  //     }
 
-      confetti({
-        particleCount: 2,
-        angle: 60,
-        spread: 55,
-        startVelocity: 60,
-        origin: { x: 0, y: 0.5 },
-        colors: colors,
-      });
-      confetti({
-        particleCount: 2,
-        angle: 120,
-        spread: 55,
-        startVelocity: 60,
-        origin: { x: 1, y: 0.5 },
-        colors: colors,
-      });
+  //     confetti({
+  //       particleCount: 2,
+  //       angle: 60,
+  //       spread: 55,
+  //       startVelocity: 60,
+  //       origin: { x: 0, y: 0.5 },
+  //       colors: colors,
+  //     });
+  //     confetti({
+  //       particleCount: 2,
+  //       angle: 120,
+  //       spread: 55,
+  //       startVelocity: 60,
+  //       origin: { x: 1, y: 0.5 },
+  //       colors: colors,
+  //     });
 
-      requestAnimationFrame(frame);
-    };
+  //     requestAnimationFrame(frame);
+  //   };
 
-    frame();
+  //   frame();
 
-    gsap.fromTo(
-      "#bus",
-      { x: 0 },
-      { x: "200%", ease: "Power4.easeOut", stagger: 0.13, duration: 5 }
-    );
+  //   gsap.fromTo(
+  //     "#bus",
+  //     { x: 0 },
+  //     { x: "200%", ease: "Power4.easeOut", stagger: 0.13, duration: 5 }
+  //   );
 
-    gsap.fromTo(
-      ".web-curtain",
-      { y: 0 },
-      {
-        y: "-100%",
-        ease: "Power4.easeOut",
-        stagger: 0.13,
-        duration: 2,
-        delay: 3,
-        onComplete: () => {
-          setShowPopup(true); // Show popup after curtain animation
-        },
-      }
-    );
-  };
-  const [showPopup, setShowPopup] = useState(false);
+  //   gsap.fromTo(
+  //     ".web-curtain",
+  //     { y: 0 },
+  //     {
+  //       y: "-100%",
+  //       ease: "Power4.easeOut",
+  //       stagger: 0.13,
+  //       duration: 2,
+  //       delay: 3,
+  //       onComplete: () => {
+  //         setShowPopup(true); // Show popup after curtain animation
+  //       },
+  //     }
+  //   );
+  // };
+  // const [showPopup, setShowPopup] = useState(false);
 
   return (
     <main className="scroll-smooth">
-      {showPopup && (
-        <Popup
-          message="Thank you for launching!"
-          duration={5000} // Popup duration of 5 seconds
-          onClose={() => setShowPopup(false)}
-        />
-      )}
-      <div className="web-curtain fixed top-0 w-full min-h-screen z-[2] bg-white flex items-center justify-start py-24 flex-col">
-        <div className="flex gap-8 lg:gap-2 justify-start absolute top-0 left-0 p-4">
-          <img src="/cbn.png" alt="tdp" className="w-2/12 lg:h-[20%]" />
-          <img src="/pawan.png" alt="yuvasena" className="w-2/12 lg:h-[20%]" />
-          <img src="/bjp.png" alt="bjp" className="w-2/12 lg:h-[20%]" />
-          <img src="/durgesh.png" alt="bjp" className="w-2/12 lg:h-[20%]" />
-        </div>
-        <h1 className="text-black text-3xl text-center lg:text-5xl"></h1>
-        <h1 className="text-black text-3xl text-center lg:text-5xl">Celebrating the <span className="text-animation"></span> of Indian Tourism</h1>
-        <CountdownTimer targetDate={launchDate} onClick={() => runAnimation(setShowPopup)} />
-        <img className="w-full lg:w-1/3 absolute bottom-0 left-0" id="bus" src="/bus-2.png" alt="bus" />
-      </div>
       <body className="">
         <div id="home" className="min-h-screen flex flex-col items-center justify-center px-2 z-10 lg:px-12 py-32 lg:p-0">
           <div className="text-center">
