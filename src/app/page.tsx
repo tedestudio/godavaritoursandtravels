@@ -15,7 +15,7 @@ import Popup from "@/components/popup";
 
 
 export default function Home() {
-  const launchDate = '2024-07-08T09:00:00';
+  const launchDate = '2024-02-08T09:00:00';
 
 
 
