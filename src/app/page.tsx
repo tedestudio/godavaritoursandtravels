@@ -28,10 +28,6 @@ const sliderData = [
     id: 2,
     url: "/car2.jpg",
   },
-  {
-    id: 3,
-    url: "/car3.jpg",
-  },
 ];
 
 export default function Home() {
@@ -473,7 +469,7 @@ export default function Home() {
         </div>
         <div id="packages" className="min-h-screen bg-white items-center justify-center flex flex-col px-4">
           <h2 className="text-zinc-950 text-4xl py-6">PACKAGES</h2>
-          <p className="text-zinc-950 text-base lg:tracking-[10px] pt-4">DOMESTIC PACKAGES</p>
+          <h4 className="text-zinc-950 text-base lg:tracking-[5px] pt-4">DOMESTIC PACKAGES</h4>
           <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-3.5">
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200" src={'/kashmir.jpeg'} alt="" width={250} height={250}></Image>
@@ -524,7 +520,7 @@ export default function Home() {
               <h6 id="placetext" className="absolute text-zinc-950 font-semibold text-xl tracking-widest shadow-2xl duration-200">ODISHA</h6>
             </div>
           </div>
-          <p className="text-zinc-950 text-base lg:tracking-[10px] pt-4">INTERNATIONAL PACKAGES</p>
+          <h4 className="text-zinc-950 text-base lg:tracking-[5px] pt-4">INTERNATIONAL PACKAGES</h4>
           <div className="grid grid-flow-row grid-cols-2 lg:grid-cols-4 gap-3.5">
             <div className="flex flex-col items-center justify-center py-12">
               <Image id="place" className="rounded-lg opacity-40 grayscale hover:grayscale-0 hover:opacity-100 duration-200" src={'/thailand.jpeg'} alt="" width={250} height={250}></Image>
