@@ -417,7 +417,7 @@ export default function Home() {
         <div id="about" className="min-h-screen bg-white text-center place-content-center px-4 py-12">
           <div className="lg:flex items-end justify-evenly py-4 text-left">
             <div
-              className="overflow-hidden w-6/12 mx-auto flex items-center justify-center relative h-full"
+              className="overflow-hidden w-full lg:w-6/12 mx-auto flex items-center justify-center relative h-full"
               ref={emblaRef}>
               <div className="flex">
                 {sliderData?.map((item) => {
