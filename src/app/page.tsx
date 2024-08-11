@@ -412,23 +412,7 @@ export default function Home() {
         </div>
         <div id="about" className="min-h-screen bg-white text-center place-content-center px-4 py-12">
           <div className="lg:flex items-end justify-evenly py-4 text-left">
-            <div
-              className="overflow-hidden w-full lg:w-6/12 mx-auto flex items-center justify-center relative h-full"
-              ref={emblaRef}>
-              <div className="flex">
-                {sliderData?.map((item) => {
-                  return (
-                    <div className="embla__slide relative h-full" key={item.id}>
-                      <img className="h-full w-full" src={item.url} alt="" />
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="z-50 flex justify-between w-full absolute text-5xl text-[orange] px-4">
-                <button className="embla__prev bg-[white] px-4 rounded-lg" onClick={scrollPrev}>‹</button>
-                <button className="embla__next bg-[white] px-4 rounded-lg" onClick={scrollNext}>›</button>
-              </div>
-            </div>
+            <Image className="rounded-lg shadow-2xl hover:shadow-lg duration-200 grayscale hover:grayscale-0" src="/about.jpeg" alt="about" width={600} height={300} />
             <div className="text-black flex flex-col gap-4 lg:gap-12 lg:w-2/5 leading-8">
               <div>
                 <h2 className="text-base lg:text-lg">About Godavari Tours & Travels</h2>
