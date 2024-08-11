@@ -28,7 +28,7 @@ export default function RootLayout({
       <meta name="revisit-after" content="1 days" />
 
       <header className="fixed top-0 left-0 right-0 z-[999999999]">
-        <div className="w-full bg-[orange] py-2 flex justify-between items-center px-6 text-xs lg:text-base">
+        <div className="w-full bg-[orange] py-2 flex justify-between items-center px-0 lg:px-6 text-xs lg:text-base">
           <a className="hover:text-black" href="mailto:godavaritravelsindia@gmail.com"><div className="flex"><img className="w-3 h-3 lg:w-5 lg:h-5" src="/email-icon.png" alt="" /><p className="px-2">godavaritravelsindia@gmail.com</p></div></a>
           <a className="hover:text-black" href="https://wa.me/919390909394?text=Hi!"><div className="flex"><img className="w-3 h-3 lg:w-5 lg:h-5" src="/phone.png" alt="" /><p className="px-2">+91 93909 09394</p></div></a>
         </div>
